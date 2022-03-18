@@ -1,0 +1,1 @@
+namespace black_friday.Game.Scripting{}
