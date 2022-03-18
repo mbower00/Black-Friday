@@ -147,6 +147,48 @@ namespace black_friday{
             Keyboardservice keyboardService = new KeyboardService();
             //Create the KEYBOARD service
             Videoservice videoService = new VideoService();
+
+
+
+            //CREATE THE DIRECTING
+            //Create the DIRECTOR
+            Director director = new Director();
+            //Create the NEXT SCENE INFO
+            NextSceneInfo nextSceneInfo = new NextSceneInfo();
+            //Set to start at the HOME SCENE
+            nextSceneInfo.SetNextSceneName("home");
+            //Declare a method for converting the string scene name to the proper instance of Scene.
+            Scene ConvertSceneNameToInstance(string sceneName){
+            switch (sceneName){
+                case "home":
+                    return homeScene;
+                case "settings":
+                    return settingsScene;
+                case "rules":
+                    return rulesScene;
+                case "playerselect":
+                    return playerSelectScene;
+                case "battleroyale":
+                    return battleRoyaleScene;
+                case "gameover":
+                    return gameOverScene;
+                default:
+                    return homeScene;
+            }
+        }
+
+
+
+            //BEGIN THE PROGRAM LOOP
+            videoService.OpenWindow();
+            while (videoService.IsWindowOpen()){
+                //Play the scene that is up to be played (determined by the nextSceneName saved in Program's instance of NextSceneInfo), then assign the returned instance of NextSceneInfo to Program's instance of NextSceneInfo
+                nextSceneInfo = director.PlayScene(ConvertSceneNameToInstance(nextSceneInfo.GetNextSceneName()));
+                //Set the scene-to-be-executed-next's instance of NextSceneInfo to be equal to Program's (newly updated) instance of NextSceneInfo.
+                //This way, scenes can communicate to the next scene.
+                ConvertSceneNameToInstance(nextSceneInfo.GetNextSceneName()).SetNextSceneInfo(nextSceneInfo);
+            }
+            videoService.CloseWindow();
         }
     }
 }
