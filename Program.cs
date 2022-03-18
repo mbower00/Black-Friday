@@ -185,7 +185,7 @@ namespace black_friday{
                 //Play the scene that is up to be played (determined by the nextSceneName saved in Program's instance of NextSceneInfo), then assign the returned instance of NextSceneInfo to Program's instance of NextSceneInfo
                 nextSceneInfo = director.PlayScene(ConvertSceneNameToInstance(nextSceneInfo.GetNextSceneName()));
                 //Set the scene-to-be-executed-next's instance of NextSceneInfo to be equal to Program's (newly updated) instance of NextSceneInfo.
-                //This way, scene can communicate to the next scene.
+                //This way, a scene can communicate to the next scene.
                 ConvertSceneNameToInstance(nextSceneInfo.GetNextSceneName()).SetNextSceneInfo(nextSceneInfo);
             }
             videoService.CloseWindow();
