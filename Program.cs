@@ -15,6 +15,13 @@ namespace black_friday{
             //Create the cast for the HOME scene
             Cast homeCast = new Cast();
             //Create the __ actor
+            Actor homeTitle = new Actor();
+
+            //Create the __ actor
+            
+            //Create the __ actor
+            
+            //Create the __ actor
             
             //Add actor(s) to the cast for the HOME scene
             
@@ -36,6 +43,12 @@ namespace black_friday{
             Scene settingsScene = new Scene();
             //Create the cast for the SETTINGS scene
             Cast settingsCast = new Cast();
+            //Create the __ actor
+            
+            //Create the __ actor
+            
+            //Create the __ actor
+            
             //Create the __ actor
             
             //Add actor(s) to the cast for the SETTINGS scene

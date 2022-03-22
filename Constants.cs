@@ -1,3 +1,5 @@
+using black_friday.Game.Casting;
+
 namespace black_friday{
     public class Constants
     {
