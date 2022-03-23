@@ -55,10 +55,16 @@ namespace black_friday.Game.Services{
             string text = actor.GetText();
             int x = actor.GetPosition().GetX();
             int y = actor.GetPosition().GetY();
+            int width = actor.GetWidth();
+            int height = actor.GetHeight();
             int fontSize = actor.GetFontSize();
+
             Casting.Color c = actor.GetColor();
             Raylib_cs.Color color = ToRaylibColor(c);
             Raylib.DrawText(text, x, y, fontSize, color);
+
+            DrawRectangle(x, y, width, height, Casting.Color color)
+
         }
 
         /// <summary>
@@ -129,5 +135,9 @@ namespace black_friday.Game.Services{
             return new Raylib_cs.Color(r, g, b, a);
         }
 
+
+        void DrawRectangle(int posX, int posY, int width, int height, Casting.Color color){
+            Raylib.DrawRectangle(posX, posY, width, height, ToRaylibColor(color));
+        }
     }
 }

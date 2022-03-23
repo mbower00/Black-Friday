@@ -6,3 +6,7 @@ namespace black_friday.Game.Casting{
     }
 
 }
+
+/*
+Ad random directions and pauses  --  Jesse
+*/

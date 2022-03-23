@@ -10,13 +10,24 @@ namespace black_friday{
         /// </summary>
         /// <param name="args">The given arguments.</param>
         static void Main(string[] args){
+            
+            //CREATE THE SERVICES
+            //Create the VIDEO service
+            KeyboardService keyboardService = new KeyboardService();
+            //Create the KEYBOARD service
+            VideoService videoService = new VideoService(false);
+            
+            
+            
+            
             //CREATE THE HOME SCENE
             Scene homeScene = new Scene();
             //Create the cast for the HOME scene
             Cast homeCast = new Cast();
             //Create the __ actor
             Actor homeTitle = new Actor();
-
+            homeTitle.SetColor(Constants.BANNER_WHITE);
+            
             //Create the __ actor
             
             //Create the __ actor
@@ -155,11 +166,6 @@ namespace black_friday{
 
 
 
-            //CREATE THE SERVICES
-            //Create the VIDEO service
-            Keyboardservice keyboardService = new KeyboardService();
-            //Create the KEYBOARD service
-            Videoservice videoService = new VideoService();
 
 
 

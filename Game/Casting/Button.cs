@@ -1,6 +1,10 @@
+#include "raylib.h"
+using Raylib_cs;
 namespace black_friday.Game.Casting{
     class Button : Actor{
 
+        bool isClicked;
+        
         public bool CanClick()
     {
         Vector2 mousePos = new Vector2(Raylib.GetMousePosition().X, Raylib.GetMousePosition().Y);           // Get the position of the mouse
@@ -22,9 +26,9 @@ namespace black_friday.Game.Casting{
             if(CanClick())
             {
                 Console.WriteLine(objectName + " Pos: " + GlobalPosition.ToString());
-                if (onClickAction != null)
+                if (!isClicked)
                 {
-                    onClickAction();
+                    isClicked = true;
                 }
             }
         }
@@ -34,9 +38,5 @@ namespace black_friday.Game.Casting{
             
 
         }
-
-    void DrawRectangle(int posX, int posY, int width, int height, Color color){
-        
-    }
     }
 }

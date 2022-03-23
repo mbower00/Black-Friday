@@ -14,6 +14,9 @@ namespace black_friday.Game.Casting{
         private Point position = new Point(0, 0);
         private Point velocity = new Point(0, 0);
 
+        private int width = 10;
+        private int height = 10;
+
         /// <summary>
         /// Constructs a new instance of Actor.
         /// </summary>
@@ -149,6 +152,30 @@ namespace black_friday.Game.Casting{
             }
             this.velocity = velocity;
         }
+
+        private int GetWidth()
+        {
+            return width;
+        }
+
+        public void SetWidth(int width)
+        {
+            this.width = width;
+        }
+
+        private int getHeight()
+        {
+            return height;
+        }
+
+        public void SetHeight(int height)
+        {
+            this.height = height;
+        }
+
+        
+
+        
 
     }
 

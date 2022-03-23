@@ -45,8 +45,9 @@ namespace black_friday.Game.Directing
         /// <param name="scene">the given scene</param>
         private void ExecuteActions(string group, Scene scene)
         {
-            List<Action> actions = scene.GetScript().GetActions(group);
-            foreach(Action action in actions)
+            List<black_friday.Game.Scripting.Action> actions = scene.GetScript().GetActions(group);
+            foreach(black_friday.Game.Scripting.Action action in actions)
+//     ↑↑↑↑↑  Not sure if "black_friday.Game.Scripting.Action" can be simpleified.  ↑↑↑↑↑ 
             {
                action.Execute(scene);
             }
