@@ -10,7 +10,9 @@ namespace black_friday.Game.Casting{
     {
         private string text = "";
         private int fontSize = 15;
-        private Color color = Constants.WHITE;
+        
+        private Color color = Constants.BANNER_WHITE;
+        private Color textColor = Constants.WHITE;
         private Point position = new Point(0, 0);
         private Point velocity = new Point(0, 0);
 
@@ -31,6 +33,11 @@ namespace black_friday.Game.Casting{
         public Color GetColor()
         {
             return color;
+        }
+
+        public Color GetTextColor()
+        {
+            return textColor;
         }
 
         /// <summary>
@@ -95,6 +102,15 @@ namespace black_friday.Game.Casting{
             this.color = color;
         }
 
+        public void SetTextColor(Color color)
+        {
+            if (color == null)
+            {
+                throw new ArgumentException("color can't be null");
+            }
+            this.textColor = color;
+        }
+
         /// <summary>
         /// Sets the actor's font size to the given value.
         /// </summary>
@@ -153,7 +169,7 @@ namespace black_friday.Game.Casting{
             this.velocity = velocity;
         }
 
-        private int GetWidth()
+        public int GetWidth()
         {
             return width;
         }
@@ -163,7 +179,7 @@ namespace black_friday.Game.Casting{
             this.width = width;
         }
 
-        private int getHeight()
+        public int GetHeight()
         {
             return height;
         }

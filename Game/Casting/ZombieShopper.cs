@@ -10,7 +10,7 @@ namespace black_friday.Game.Casting{
         /// Gets the frame tick for this instance of ZombieShopper
         /// </summary>
         /// <returns>The frame tick</returns>
-        int GetFrameTick(){
+        public int GetFrameTick(){
             return this.frameTick;
         }
 
@@ -18,14 +18,14 @@ namespace black_friday.Game.Casting{
         /// Increments the frame tick
         /// </summary>
         /// <param name="increment">The amount by which to increment the frame tick (DEFAULT = 1)</param>
-        void IncrementFrameTick(int increment = 1){
+        public void IncrementFrameTick(int increment = 1){
             this.frameTick += increment;
         }
         
         /// <summary>
         /// Resets the frame tick to 0
         /// </summary>
-        void ResetFrameTick(){
+        public void ResetFrameTick(){
             this.frameTick = 0;
         }
     }
