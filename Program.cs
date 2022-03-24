@@ -19,31 +19,52 @@ namespace black_friday{
             
             
             
-            
             //CREATE THE HOME SCENE
             Scene homeScene = new Scene();
             //Create the cast for the HOME scene
             Cast homeCast = new Cast();
-            //Create the __ actor
+            //Create the _homeTitle_ actor
             Actor homeTitle = new Actor();
             homeTitle.SetColor(Constants.BANNER_WHITE);
-            
-            //Create the __ actor
-            
-            //Create the __ actor
-            
-            //Create the __ actor
-            
+            Point homeTitleStartingPoint = new Point(Constants.MAX_X / 2, Constants.MAX_Y - 150);
+            homeTitle.SetPosition(homeTitleStartingPoint);
+            homeTitle.SetText("Black Friday!");
+            homeTitle.SetTextColor(Constants.BLACK);
+            homeTitle.SetWidth(500);
+            homeTitle.SetHeight(100);
+            homeTitle.SetFontSize(50);
+            //Create the _settingsButton_ actor
+            Actor settingsButton = new Actor();
+            homeTitle.SetColor(Constants.BANNER_RED);
+            Point settingsButtonStartingPoint = new Point(Constants.MAX_X / 2, Constants.MAX_Y - 300);
+            homeTitle.SetPosition(homeTitleStartingPoint);
+            homeTitle.SetText("Battle Royale");
+            homeTitle.SetTextColor(Constants.WHITE);
+            homeTitle.SetWidth(500);
+            homeTitle.SetHeight(100);
+            homeTitle.SetFontSize(50);
+            //Create the _battleRoyaleButton_ actor
+            Actor battleRoyaleButton = new Actor();
+            homeTitle.SetColor(Constants.BANNER_BLUE);
+            Point battleRoyaleButtonStartingPoint = new Point(Constants.MAX_X / 3, Constants.MAX_Y - 450);
+            homeTitle.SetPosition(homeTitleStartingPoint);
+            homeTitle.SetText("Settings");
+            homeTitle.SetTextColor(Constants.WHITE);
+            homeTitle.SetWidth(300);
+            homeTitle.SetHeight(100);
+            homeTitle.SetFontSize(50);
             //Add actor(s) to the cast for the HOME scene
-            
+            homeCast.AddActor("info", homeTitle);
+            homeCast.AddActor("button", battleRoyaleButton);
+            homeCast.AddActor("button", settingsButton);
             //Create the script for the HOME scene
             Script homeScript = new Script();
             //Add INPUT action(s) to the script for the HOME scene
-            
+                //homeScript.AddAction("input", );
             //Add UPDATE action(s) to the script for the HOME scene
-            
+                //homeScript.AddAction("update", );
             //Add OUTPUT action(s) to the script for the HOME scene
-            
+            homeScript.AddAction("output", new DrawActorsAction(videoService));
             //Add the cast and script to the HOME scene
             homeScene.SetCast(homeCast);
             homeScene.SetScript(homeScript);
