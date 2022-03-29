@@ -35,13 +35,14 @@ namespace black_friday.Game.Scripting{
                 }
             }
             
-            foreach (ZombieShopper deadZombie in zombiesToKill){
-                deadZombie.SetIsAlive(false);
-                deadZombie.SetColor(Constants.CLEAR);
-                deadZombie.SetText(Constants.DEAD_SHOPPER_FACE);
-                deadZombie.SetVelocity(new Point(0, 0));
-            }
+            
+            KillPlayers(playersToKill);
 
+            KillZombies(zombiesToKill);
+        }
+
+
+        public void KillPlayers(List<Player> playersToKill){
             foreach (Player deadPlayer in playersToKill){
                 deadPlayer.SetIsAlive(false);
                 deadPlayer.SetIsPunching(false);
@@ -52,7 +53,16 @@ namespace black_friday.Game.Scripting{
             }
         }
 
-        private bool isCollision(Actor actor1, Actor actor2, int widthOrHeight=50){
+        public void KillZombies(List<ZombieShopper> zombiesToKill){
+            foreach (ZombieShopper deadZombie in zombiesToKill){
+                deadZombie.SetIsAlive(false);
+                deadZombie.SetColor(Constants.CLEAR);
+                deadZombie.SetText(Constants.DEAD_SHOPPER_FACE);
+                deadZombie.SetVelocity(new Point(0, 0));
+            }
+        }
+
+        public bool isCollision(Actor actor1, Actor actor2, int widthOrHeight=50){
             int x1;
             x1 = actor1.GetPosition().GetX();
             int y1;
