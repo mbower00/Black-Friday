@@ -1,6 +1,8 @@
 namespace black_friday.Game.Casting{
     class Player : Actor{
         private int playerID = 0;
+
+        private int score = 0;
         Random random = new Random();
         private bool isPunching;
         private int frameTick = Constants.PUNCH_COOLDOWN_DURATION + Constants.PUNCH_DURATION + 1;
@@ -57,5 +59,9 @@ namespace black_friday.Game.Casting{
         public void ResetFrameTick(){
             this.frameTick = 0;
         }
+
+        public void SetScore (int score){this.score = score;}
+        public int GetScore (){return score;}
+        public void IncrementScore (int increment = 1){this.score += increment;}
     }
 }
