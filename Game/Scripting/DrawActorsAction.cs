@@ -9,7 +9,9 @@ namespace black_friday.Game.Scripting{
         }
 
         public void Execute(Scene scene){
-
+            videoService.ClearBuffer();            
+            videoService.DrawActors(scene.GetCast().GetAllActors());
+            videoService.FlushBuffer();
         } 
     }
 }

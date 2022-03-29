@@ -1,12 +1,9 @@
+using black_friday.Game.Services;
+using black_friday.Game.Directing;
 using black_friday.Game.Casting;
-// using black_friday.Game.Scripting;
 
 namespace black_friday.Game.Scripting{
-     // TODO: Implement the MoveActorsAction class here
-
-    // 1) Add the class declaration. Use the following class comment. Make sure you
-    //    inherit from the Action class.
-
+    
     /// <summary>
     /// <para>An update action that moves all the actors.</para>
     /// <para>
@@ -16,16 +13,14 @@ namespace black_friday.Game.Scripting{
     class MoveActorsAction : Action{
 
 
-    // 2) Create the class constructor. Use the following method comment.
-
     /// <summary>
     /// Constructs a new instance of MoveActorsAction.
     /// </summary>
         public MoveActorsAction(){}
 
-    // 3) Override the Execute(Cast cast, Script script) method. Use the following 
-    //    method comment. You custom implementation should do the following:
-        public void Execute(Cast cast, Script script, string player){
+        public void Execute(Scene scene){
+            Cast cast = scene.GetCast();
+            
             // a) get all the actors from the cast
             List<Actor> actors = cast.GetAllActors();
             // b) loop through all the actors

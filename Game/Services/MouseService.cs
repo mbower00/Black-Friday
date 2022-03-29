@@ -5,7 +5,7 @@ using black_friday.Game.Casting;
 
 namespace black_friday.Game.Services
 {
-    public class RaylibMouseService
+    public class MouseService
     {
         private Dictionary<string, Raylib_cs.MouseButton> buttons
                 = new Dictionary<string, Raylib_cs.MouseButton>() {

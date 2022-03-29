@@ -28,7 +28,10 @@ namespace black_friday.Game.Directing
         /// <returns>the name of the scene to play next</returns>
         public NextSceneInfo PlayScene(Scene scene)
         {
-            while (scene.GetIsSceneOver())
+            if (scene.GetIsGameScene()){
+                ExecuteActions("start", scene);
+            }
+            while (!scene.GetIsSceneOver())
             {
                 ExecuteActions("input", scene);
                 ExecuteActions("update", scene);

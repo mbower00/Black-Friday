@@ -18,8 +18,9 @@ namespace black_friday.Game.Directing{
     /// The gameOverScene determines that "p1" means that player one was the winner displays text saying "Player One Wins!" 
     /// </summary>
     public class NextSceneInfo{
-        string nextSceneName;
-        string winner;
+        private string nextSceneName;
+        private string winner;
+        private string gameMode;
 
         /// <summary>
         /// Constructs a new instance of the NextSceneInfo class
@@ -27,6 +28,7 @@ namespace black_friday.Game.Directing{
         public NextSceneInfo(){
             winner = "";
             nextSceneName = "";
+            gameMode = "";
         }
 
         /// <summary>
@@ -45,14 +47,23 @@ namespace black_friday.Game.Directing{
         /// <summary>
         /// Sets the winner string equal to the lowercase of the passed string
         /// </summary>
-        /// <param name="winner">the desired winner string (eg... "p1", "t1", "p2", "p3", "p4", "none", etc...)</param>
+        /// <param name="winner">the desired winner string (eg... "Player 1", "Player 2", "Team 1", "No One", etc...)</param>
         public void SetWinner(string winner){
             winner.ToLower();
             this.winner = winner;
         }
 
-        public string GetWinner(string winner){
+        public string GetWinner(){
             return winner;
+        }
+
+        public void SetGameMode(string gameMode){
+            gameMode.ToLower();
+            this.gameMode = gameMode;
+        }
+
+        public string GetGameMode(){
+            return gameMode;
         }
 
     }

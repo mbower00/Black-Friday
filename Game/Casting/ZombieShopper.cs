@@ -1,9 +1,21 @@
 namespace black_friday.Game.Casting{
     class ZombieShopper : Actor{
+        private bool isMoving = false;
+        private int duration;
         private int frameTick;
-        
+
+        private Point direction = new Point(0, 0);
+        Random random = new Random();
+
         public ZombieShopper(){
-            this.frameTick = 0;
+            frameTick = 0;
+            this.SetText(Constants.SHOPPER_FACE);
+            this.SetColor(new Color(random.Next(30, 230), random.Next(30, 230), random.Next(30, 230)));
+            this.SetTextColor(Constants.WHITE);
+            this.SetWidth(50);
+            this.SetHeight(50);
+            this.SetFontSize(50);
+            this.SetPosition(new Point(random.Next(Constants.MAX_X - this.GetWidth() + 1), random.Next(Constants.MAX_Y - this.GetHeight() + 1)));
         }
 
         /// <summary>
@@ -28,10 +40,13 @@ namespace black_friday.Game.Casting{
         public void ResetFrameTick(){
             this.frameTick = 0;
         }
+
+        public void SetIsMoving (bool isMoving){this.isMoving = isMoving;}
+        public bool GetIsMoving (){return isMoving;}
+        public void SetDuration (int duration){this.duration = duration;}
+        public int GetDuration (){return duration;}
+        public void SetDirection (Point direction){this.direction = direction;}
+        public Point GetDirection (){return direction;}
     }
 
 }
-
-/*
-Ad random directions and pauses  --  Jesse
-*/

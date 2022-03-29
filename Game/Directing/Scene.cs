@@ -9,9 +9,11 @@ namespace black_friday.Game.Directing{
         private bool isSceneOver;
         private Cast cast;
         private Script script;
+        private bool isGameScene;
         NextSceneInfo nextSceneInfo = new NextSceneInfo();
         public Scene(){
-            this.isSceneOver = false;
+            isSceneOver = false;
+            isGameScene = false;
         }
 
         //GETTERS AND SETTERS...
@@ -44,6 +46,16 @@ namespace black_friday.Game.Directing{
 
         public void SetIsSceneOver(bool isSceneOver){
             this.isSceneOver = isSceneOver;
+        }
+
+        public void SetIsGameScene(bool isGameScene)
+        {
+            this.isGameScene = isGameScene;
+        }
+        
+        public bool GetIsGameScene()
+        {
+            return isGameScene;
         }
     }
 }

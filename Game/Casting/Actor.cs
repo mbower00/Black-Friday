@@ -10,14 +10,13 @@ namespace black_friday.Game.Casting{
     {
         private string text = "";
         private int fontSize = 15;
-        
         private Color color = Constants.BANNER_WHITE;
         private Color textColor = Constants.WHITE;
         private Point position = new Point(0, 0);
         private Point velocity = new Point(0, 0);
-
-        private int width = 10;
-        private int height = 10;
+        private int width = 11;
+        private int height = 11;
+        private bool isAlive = true;
 
         /// <summary>
         /// Constructs a new instance of Actor.
@@ -189,10 +188,39 @@ namespace black_friday.Game.Casting{
             this.height = height;
         }
 
-        
 
-        
+        public List<Point> GetAllPoints(){
+            List<Point> points = new List<Point>();
+            int x;
+            switch(this.position.GetX()){
+                case 0:
+                    x = 1;
+                    break;
+                default:
+                    x = this.position.GetX();
+                    break;
+            }
+            
+            int y;
+            switch(this.position.GetY()){
+                case 0:
+                    y = 1;
+                    break;
+                default:
+                    y = this.position.GetY();
+                    break;
+            }
 
+            for(int i = 1; i <= this.height ; i++){
+                for(int j = 1; j <= this.width ; j++){
+                    Point point = new Point(x + j, y + i);
+                    points.Add(point);
+                }
+            }
+            return points;
+        }
+        
+        public void SetIsAlive (bool isAlive){this.isAlive = isAlive;}
+        public bool GetIsAlive (){return isAlive;}
     }
-
 }

@@ -62,9 +62,9 @@ namespace black_friday.Game.Services{
             Raylib_cs.Color textcolor = ToRaylibColor(actor.GetTextColor());
             Raylib_cs.Color color = ToRaylibColor(c);
 
-            DrawRectangle(x, y, width, height, c);
 
-            Raylib.DrawText(text, x, y, fontSize, color);
+            DrawRectangle(x, y, width, height, c);
+            Raylib.DrawText(text, x, y, fontSize, textcolor);
         }
 
         /// <summary>

@@ -6,10 +6,10 @@ namespace black_friday.Game.Casting{
         bool isClicked;
         public Button(){
         }
-        public bool GetisClicked(){
+        public bool GetIsClicked(){
             return isClicked;
         }
-        public bool SetisClicked(){
+        public void SetIsClicked(bool isClicked){
             this.isClicked = isClicked;
         }
     }
