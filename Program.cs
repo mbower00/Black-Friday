@@ -24,6 +24,11 @@ namespace black_friday{
             Scene homeScene = new Scene();
             //Create the cast for the HOME scene
             Cast homeCast = new Cast();
+            //Create the home background actor
+            Actor homeBackground = new Actor();
+            homeBackground.SetWidth(1350);
+            homeBackground.SetHeight(900);
+            homeBackground.SetPath("./black_friday/Game/Props/WalmartExterior.PNG");
             //Create the _homeTitle_ actor
             Actor homeTitle = new Actor();
             homeTitle.SetColor(Constants.BANNER_WHITE);
@@ -36,7 +41,7 @@ namespace black_friday{
             homeTitle.SetFontSize(50);
             //Create the _settingsButton_ actor
             Button settingsButton = new Button();
-            settingsButton.SetColor(Constants.BANNER_RED);
+            settingsButton.SetColor(Constants.BANNER_BLUE);
             Point settingsButtonStartingPoint = new Point(Constants.MAX_X / 2 - 400, 0 + 105);
             settingsButton.SetPosition(settingsButtonStartingPoint);
             settingsButton.SetText("Settings");
@@ -46,7 +51,7 @@ namespace black_friday{
             settingsButton.SetFontSize(50);
             //Create the _battleRoyaleButton_ actor
             Button battleRoyaleButton = new Button();
-            battleRoyaleButton.SetColor(Constants.BANNER_BLUE);
+            battleRoyaleButton.SetColor(Constants.BANNER_GREEN);
             Point battleRoyaleButtonStartingPoint = new Point(Constants.MAX_X / 2 - 400, 0 + 205);
             battleRoyaleButton.SetPosition(battleRoyaleButtonStartingPoint);
             battleRoyaleButton.SetText("Battle Royale");
@@ -164,7 +169,7 @@ namespace black_friday{
             rulesInfo.SetFontSize(50);
             //Create the _playerSelectButton_ actor
             Button playerSelectButton = new Button();
-           playerSelectButton.SetColor(Constants.BANNER_BLUE);
+           playerSelectButton.SetColor(Constants.BANNER_GREEN);
             Point playerSelectButtonStartingPoint = new Point(Constants.MAX_X / 2 - 400, 0 + 430);
             playerSelectButton.SetPosition(playerSelectButtonStartingPoint);
             playerSelectButton.SetText("To Player Select");
@@ -220,17 +225,17 @@ namespace black_friday{
             //Create the playerSelectInfo actor
             Actor playerSelectInfo = new Actor();
             playerSelectInfo.SetColor(Constants.BANNER_WHITE);
-            Point playerSelectInfoStartingPoint = new Point(Constants.MAX_X / 2 - 505, 0 + 105);
+            Point playerSelectInfoStartingPoint = new Point(Constants.MAX_X / 2 - 530, 0 + 105);
             playerSelectInfo.SetPosition(playerSelectInfoStartingPoint);
             playerSelectInfo.SetText("Player Select Info");
             playerSelectInfo.SetTextColor(Constants.WHITE);
-            playerSelectInfo.SetWidth(1010);
-            playerSelectInfo.SetHeight(300);
-            playerSelectInfo.SetFontSize(35);
+            playerSelectInfo.SetWidth(1060);
+            playerSelectInfo.SetHeight(662);
+            playerSelectInfo.SetFontSize(30);
             //Create the _playerNumberButton_ actor
             Button playerNumberButton = new Button();
             playerNumberButton.SetColor(Constants.BANNER_BLUE);
-            Point playerNumberButtonStartingPoint = new Point(Constants.MAX_X / 2 - 400, 0 + 430);
+            Point playerNumberButtonStartingPoint = new Point(Constants.MAX_X / 2 - 600, 0 + 800);
             playerNumberButton.SetPosition(playerNumberButtonStartingPoint);
             playerNumberButton.SetText($"Number of Players: {Constants.PLAYER_COUNT}");
             playerNumberButton.SetTextColor(Constants.WHITE);
@@ -240,23 +245,23 @@ namespace black_friday{
 
             //Create the _playButton_ actor
             Button playButton = new Button();
-            playButton.SetColor(Constants.BANNER_BLUE);
-            Point playButtonStartingPoint = new Point(Constants.MAX_X / 2 - 400, 0 + 505);
+            playButton.SetColor(Constants.BANNER_GREEN);
+            Point playButtonStartingPoint = new Point(Constants.MAX_X / 2, 0 + 800);
             playButton.SetPosition(playButtonStartingPoint);
             playButton.SetText("Start Game");
             playButton.SetTextColor(Constants.WHITE);
-            playButton.SetWidth(500);
+            playButton.SetWidth(300);
             playButton.SetHeight(50);
             playButton.SetFontSize(50);
 
             //Create the playerSelectHomeButton actor
             Button playerSelectHomeButton = new Button();
             playerSelectHomeButton.SetColor(Constants.BANNER_RED);
-            Point playerSelectHomeButtonStartingPoint = new Point(Constants.MAX_X / 2 - 400, 0 + 580);
+            Point playerSelectHomeButtonStartingPoint = new Point(Constants.MAX_X / 2 + 350, 0 + 800);
             playerSelectHomeButton.SetPosition(playerSelectHomeButtonStartingPoint);
             playerSelectHomeButton.SetText("Home");
             playerSelectHomeButton.SetTextColor(Constants.WHITE);
-            playerSelectHomeButton.SetWidth(500);
+            playerSelectHomeButton.SetWidth(125);
             playerSelectHomeButton.SetHeight(50);
             playerSelectHomeButton.SetFontSize(50);
             
@@ -299,6 +304,15 @@ namespace black_friday{
             battleRoyaleScript.AddAction("input", new ControlPlayer4Action());
             battleRoyaleScript.AddAction("input", new ControlPlayer5Action());
             battleRoyaleScript.AddAction("input", new ControlPlayer6Action());
+            battleRoyaleScript.AddAction("input", new ControlPlayer7Action());
+            battleRoyaleScript.AddAction("input", new ControlPlayer8Action());
+            battleRoyaleScript.AddAction("input", new ControlPlayer9Action());
+            battleRoyaleScript.AddAction("input", new ControlPlayer10Action());
+            battleRoyaleScript.AddAction("input", new ControlPlayer11Action());
+            battleRoyaleScript.AddAction("input", new ControlPlayer12Action());
+            battleRoyaleScript.AddAction("input", new ControlPlayer13Action());
+            battleRoyaleScript.AddAction("input", new ControlPlayer14Action());
+            battleRoyaleScript.AddAction("input", new ControlPlayer15Action());
             //Add UPDATE action(s) to the script for the BATTLE ROYALE scene
             battleRoyaleScript.AddAction("update", new ManageTimerAction());
             battleRoyaleScript.AddAction("update", new DirectZombieShoppersAction());

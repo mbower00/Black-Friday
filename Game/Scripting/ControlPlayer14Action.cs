@@ -3,9 +3,9 @@ using black_friday.Game.Directing;
 using black_friday.Game.Casting;
 
 namespace black_friday.Game.Scripting{
-    class ControlPlayer6Action : Action{
+    class ControlPlayer14Action : Action{
         KeyboardService keyboardService = new KeyboardService();
-        public ControlPlayer6Action(){
+        public ControlPlayer14Action(){
         }
         public void Execute(Scene scene){
             int vx = 0;
@@ -13,27 +13,27 @@ namespace black_friday.Game.Scripting{
             bool isPunching = false;
 
             // punch
-            if (keyboardService.IsKeyDown("t2"))
+            if (keyboardService.IsKeyDown("lalt"))
             {
                 isPunching = true;
             }
             // up
-            if (keyboardService.IsKeyDown("t1"))
+            if (keyboardService.IsKeyDown("cap"))
             {
                 vy = -1;
             }
             // left
-            if (keyboardService.IsKeyDown("`"))
+            if (keyboardService.IsKeyDown("lshift"))
             {
                 vx = -1;
             }
             // down
-            if (keyboardService.IsKeyDown("tab"))
+            if (keyboardService.IsKeyDown("lctrl"))
             {
                 vy = 1;
             }
             // right
-            if (keyboardService.IsKeyDown("q"))
+            if (keyboardService.IsKeyDown("z"))
             {
                 vx = 1;
             }
@@ -44,7 +44,7 @@ namespace black_friday.Game.Scripting{
             List<Actor> players = scene.GetCast().GetActors("player");
             foreach(Actor actor in players){
                 Player player = (Player) actor;
-                if(player.GetPlayerID() == 6 && player.GetIsAlive()){
+                if(player.GetPlayerID() == 14 && player.GetIsAlive()){
                     if (isPunching && player.GetFrameTick() > Constants.PUNCH_COOLDOWN_DURATION){ //punching and able to punch
                         player.SetIsPunching(true);
                         player.SetText(Constants.SHOPPER_PUNCHING_FACE);

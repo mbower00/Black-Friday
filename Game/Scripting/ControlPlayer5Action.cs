@@ -13,27 +13,27 @@ namespace black_friday.Game.Scripting{
             bool isPunching = false;
 
             // punch
-            if (keyboardService.IsKeyDown("9"))
+            if (keyboardService.IsKeyDown("*"))
             {
                 isPunching = true;
             }
             // up
-            if (keyboardService.IsKeyDown("8"))
+            if (keyboardService.IsKeyDown("divide"))
             {
                 vy = -1;
             }
             // left
-            if (keyboardService.IsKeyDown("4"))
+            if (keyboardService.IsKeyDown("7"))
             {
                 vx = -1;
             }
             // down
-            if (keyboardService.IsKeyDown("5"))
+            if (keyboardService.IsKeyDown("8"))
             {
                 vy = 1;
             }
             // right
-            if (keyboardService.IsKeyDown("6"))
+            if (keyboardService.IsKeyDown("9"))
             {
                 vx = 1;
             }

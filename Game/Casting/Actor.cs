@@ -16,6 +16,7 @@ namespace black_friday.Game.Casting{
         private Point velocity = new Point(0, 0);
         private int width = 11;
         private int height = 11;
+        private string path = "";
         private bool isAlive = true;
 
         /// <summary>
@@ -187,6 +188,16 @@ namespace black_friday.Game.Casting{
         {
             this.height = height;
         }
+
+        public string GetPath()
+        {
+            return path;
+        }
+
+        public void SetPath(string path)
+        {
+            this.path = path;
+        } 
 
 
         public List<Point> GetAllPoints(){

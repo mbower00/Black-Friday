@@ -24,6 +24,7 @@ namespace black_friday{
         public static Color BANNER_RED = new Color(255, 0, 0, 175);
         public static Color YELLOW = new Color(255, 255, 0);
         public static Color GREEN = new Color(0, 255, 0);
+        public static Color BANNER_GREEN = new Color(0, 255, 0, 175);
         public static Color BLUE = new Color(0, 0, 255);
         public static Color BANNER_BLUE = new Color(0, 0, 255, 175);
         public static Color WHITE = new Color(255, 255, 255);

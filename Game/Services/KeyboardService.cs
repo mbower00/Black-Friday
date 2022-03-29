@@ -44,17 +44,71 @@ namespace black_friday.Game.Services{
             keys["right"] = KeyboardKey.KEY_RIGHT; // right
             keys["0"] = KeyboardKey.KEY_KP_0; // punch
             // PLAYER 5
-            keys["8"] = KeyboardKey.KEY_KP_8; // up
-            keys["4"] = KeyboardKey.KEY_KP_4; // left
-            keys["5"] = KeyboardKey.KEY_KP_5; // down
-            keys["6"] = KeyboardKey.KEY_KP_6; // right
-            keys["9"] = KeyboardKey.KEY_KP_9; // punch
+            keys["divide"] = KeyboardKey.KEY_KP_DIVIDE; // up
+            keys["7"] = KeyboardKey.KEY_KP_7; // left
+            keys["8"] = KeyboardKey.KEY_KP_8; // down
+            keys["9"] = KeyboardKey.KEY_KP_9; // right
+            keys["*"] = KeyboardKey.KEY_KP_MULTIPLY; // punch
             // PLAYER 6
-            keys["1"] = KeyboardKey.KEY_ONE; // up
+            keys["t1"] = KeyboardKey.KEY_ONE; // up
             keys["`"] = KeyboardKey.KEY_GRAVE; // left
             keys["tab"] = KeyboardKey.KEY_TAB; // down
             keys["q"] = KeyboardKey.KEY_Q; // right
-            keys["2"] = KeyboardKey.KEY_TWO; // punch
+            keys["t2"] = KeyboardKey.KEY_TWO; // punch
+            // PLAYER 7
+            keys["f"] = KeyboardKey.KEY_F; // up
+            keys["c"] = KeyboardKey.KEY_C; // left
+            keys["v"] = KeyboardKey.KEY_V; // down
+            keys["b"] = KeyboardKey.KEY_B; // right
+            keys["x"] = KeyboardKey.KEY_X; // punch
+            // PLAYER 8
+            keys["k"] = KeyboardKey.KEY_K; // up
+            keys["m"] = KeyboardKey.KEY_M; // left
+            keys[","] = KeyboardKey.KEY_COMMA; // down
+            keys["."] = KeyboardKey.KEY_PERIOD; // right
+            keys["n"] = KeyboardKey.KEY_N; // punch
+            // PLAYER 9
+            keys["f3"] = KeyboardKey.KEY_F3; // up
+            keys["t3"] = KeyboardKey.KEY_THREE; // left
+            keys["t4"] = KeyboardKey.KEY_FOUR; // down
+            keys["t5"] = KeyboardKey.KEY_FIVE; // right
+            keys["f4"] = KeyboardKey.KEY_F4; // punch
+            // PLAYER 10
+            keys["f11"] = KeyboardKey.KEY_F11; // up
+            keys["t9"] = KeyboardKey.KEY_NINE; // left
+            keys["t0"] = KeyboardKey.KEY_ZERO; // down
+            keys["t-"] = KeyboardKey.KEY_MINUS; // right
+            keys["f10"] = KeyboardKey.KEY_F10; // punch
+            // PLAYER 11
+            keys["f8"] = KeyboardKey.KEY_F8; // up
+            keys["t6"] = KeyboardKey.KEY_SIX; // left
+            keys["t7"] = KeyboardKey.KEY_SEVEN; // down
+            keys["t8"] = KeyboardKey.KEY_EIGHT; // right
+            keys["f7"] = KeyboardKey.KEY_F7; // punch
+            // PLAYER 12
+            keys["]"] = KeyboardKey.KEY_RIGHT_BRACKET; // left
+            keys["enter"] = KeyboardKey.KEY_ENTER; // down
+            keys["\\"] = KeyboardKey.KEY_BACKSLASH; // right
+            keys["backspace"] = KeyboardKey.KEY_BACKSPACE; // up
+            keys["="] = KeyboardKey.KEY_EQUAL; // punch
+            // PLAYER 13
+            keys["5"] = KeyboardKey.KEY_KP_5; // up
+            keys["1"] = KeyboardKey.KEY_KP_1; // left
+            keys["2"] = KeyboardKey.KEY_KP_2; // down
+            keys["3"] = KeyboardKey.KEY_KP_3; // right
+            keys["6"] = KeyboardKey.KEY_KP_6; // punch
+            // PLAYER 14
+            keys["z"] = KeyboardKey.KEY_Z; // right
+            keys["cap"] = KeyboardKey.KEY_CAPS_LOCK; // up
+            keys["lshift"] = KeyboardKey.KEY_LEFT_SHIFT; // left
+            keys["lctrl"] = KeyboardKey.KEY_LEFT_CONTROL; // down
+            keys["lalt"] = KeyboardKey.KEY_LEFT_ALT; // punch
+            // PLAYER 15
+            keys["/"] = KeyboardKey.KEY_SLASH; // up
+            keys["space"] = KeyboardKey.KEY_SPACE; // left
+            keys["ralt"] = KeyboardKey.KEY_RIGHT_ALT; // down
+            keys["rctrl"] = KeyboardKey.KEY_RIGHT_CONTROL; // right
+            keys["rshift"] = KeyboardKey.KEY_RIGHT_SHIFT; // punch
         }
 
         /// <summary>
