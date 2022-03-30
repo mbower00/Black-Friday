@@ -5,19 +5,21 @@ using black_friday.Game.Casting;
 namespace black_friday.Game.Scripting{
     class InstantiateShoplifterActorsAction : Action{
         Random random = new Random();
+        HandleToasterCollisionAction handleToasterCollisionAction = new HandleToasterCollisionAction();
 
         public InstantiateShoplifterActorsAction(){
         }
 
         public void Execute(Scene scene){
             Cast cast = scene.GetCast();
+            List<Actor> players = cast.GetActors("player");
 
             //create and add the mallcop
             MallCop mallcop = new MallCop();
             cast.AddActor("mallcop", mallcop);
 
-
-            for(int i=0; i < Constants.PLAYER_COUNT * 2 + 7; i++){
+            //create and add the toasters
+            for(int i=0; i < Constants.PLAYER_COUNT * 2 + 15; i++){
                 Actor toaster = new Actor();
                 toaster.SetText(Constants.TOASTER_ICON);
                 toaster.SetColor(Constants.YELLOW);
@@ -26,6 +28,20 @@ namespace black_friday.Game.Scripting{
                 toaster.SetHeight(25);
                 toaster.SetFontSize(25);
                 toaster.SetPosition(new Point(random.Next(Constants.MAX_X - toaster.GetWidth() + 1), random.Next(Constants.MAX_Y - toaster.GetHeight() + 1)));
+                
+                bool shouldRepeat = false;
+                do{
+                    foreach(Actor actor in players){
+                    Player player = (Player) actor;
+                    shouldRepeat = false;
+
+                        if(handleToasterCollisionAction.IsToasterCollision(player, toaster)){
+                            toaster.SetPosition(new Point(random.Next(Constants.MAX_X - toaster.GetWidth() + 1), random.Next(Constants.MAX_Y - toaster.GetHeight() + 1)));
+                            shouldRepeat = true;    
+                        }
+                    }
+                }while(shouldRepeat);
+
                 cast.AddActor("toaster", toaster);
             }
 

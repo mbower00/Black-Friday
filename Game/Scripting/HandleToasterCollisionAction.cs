@@ -76,6 +76,7 @@ namespace black_friday.Game.Scripting{
             int right = xp + wp;
 
             if(yt >= top && yt <= bottom && xt >= left && xt <= right){
+                //Console.WriteLine($"Toaster Collision at (player) {xp} {yp} - (toaster) {xt} {yt} \n\ttop {top} - bottom {bottom} - left {left} - right {right}");
                 return true;
             }
 
