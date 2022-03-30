@@ -80,7 +80,6 @@ namespace black_friday.Game.Scripting{
             int rightEdgeOfArea = x1 + widthOrHeight;
 
             if(y2 >= topEdgeOfArea && y2 <= bottomEdgeOfArea && x2 >= leftEdgeOfArea && x2 <= rightEdgeOfArea){ // within collision range
-                Console.WriteLine($"collision at ({x1}, {y1}) and ({x2}, {y2}) top({topEdgeOfArea}) bottom({bottomEdgeOfArea}) left({leftEdgeOfArea}) right({rightEdgeOfArea})");
                 return true;
             }
 
