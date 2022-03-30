@@ -37,5 +37,8 @@ namespace black_friday{
         public static Color BLACK = new Color(0, 0, 0);
         public static Color BANNER_BLACK = new Color(0, 0, 0, 175);
         public static Color CLEAR = new Color(0, 0, 0, 0);
+        public static int GET_TOASTER_COUNT(){
+            return Constants.PLAYER_COUNT * 2 + 15;
+        }
     }
 }

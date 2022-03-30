@@ -19,7 +19,7 @@ namespace black_friday.Game.Scripting{
             cast.AddActor("mallcop", mallcop);
 
             //create and add the toasters
-            for(int i=0; i < Constants.PLAYER_COUNT * 2 + 15; i++){
+            for(int i=0; i < Constants.GET_TOASTER_COUNT(); i++){
                 Actor toaster = new Actor();
                 toaster.SetText(Constants.TOASTER_ICON);
                 toaster.SetColor(Constants.YELLOW);
