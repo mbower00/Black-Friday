@@ -42,6 +42,26 @@ namespace black_friday.Game.Scripting{
                     }
                 }while(shouldRepeat);
 
+
+                // bool shouldRepeat = false;
+                // do{
+                //     foreach(Actor actor in players){
+                //     Player player = (Player) actor;
+                //     shouldRepeat = false;
+                //     List<Point> actorPoints = player.GetAllPoints();
+                //     List<Point> toasterPoints = toaster.GetAllPoints();
+                //         foreach(Point ap in actorPoints){
+                //             foreach(Point tp in toasterPoints){
+                //                 if(ap.Equals(tp)){
+                //                     toaster.SetPosition(new Point(random.Next(Constants.MAX_X - toaster.GetWidth() + 1), random.Next(Constants.MAX_Y - toaster.GetHeight() + 1)));
+                //                     shouldRepeat = true;    
+                //                 }
+                //             }
+                //         }
+                //     }
+                // }while(shouldRepeat);
+
+
                 cast.AddActor("toaster", toaster);
             }
 

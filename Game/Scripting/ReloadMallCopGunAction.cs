@@ -16,7 +16,7 @@ namespace black_friday.Game.Scripting{
             if(Constants.COP_CAN_RELOAD){
                 mallCop.IncrementFrameTick();
 
-                if(mallCop.GetAmmo() <= 0 && mallCop.GetFrameTick() >= Constants.COP_RELOAD_TIME){
+                if(mallCop.GetAmmo() <= 0 && mallCop.GetFrameTick() >= Constants.GET_COP_RELOAD_TIME()){
                     mallCop.IncrementAmmo();
                     Console.WriteLine("reload");
                 }
