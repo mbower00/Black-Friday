@@ -70,6 +70,7 @@ namespace black_friday{
             shoplifterButton.SetHeight(50);
             shoplifterButton.SetFontSize(50);
             //Add actor(s) to the cast for the HOME scene
+            homeCast.AddActor("background", homeBackground);
             homeCast.AddActor("info", homeTitle);
             homeCast.AddActor("button", battleRoyaleButton);
             homeCast.AddActor("button", settingsButton);
