@@ -35,7 +35,7 @@ namespace black_friday.Game.Scripting{
             Point ammoCountStartingPoint = new Point(0 + 25, 0 + 20);
             ammoCount.SetPosition(ammoCountStartingPoint);
             ammoCount.SetText("");
-            ammoCount.SetTextColor(Constants.BANNER_RED);
+            ammoCount.SetTextColor(Constants.BANNER_GREEN);
             ammoCount.SetWidth(100);
             ammoCount.SetHeight(50);
             ammoCount.SetFontSize(50);

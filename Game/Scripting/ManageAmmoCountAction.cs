@@ -1,9 +1,9 @@
 using black_friday.Game.Services;
 using black_friday.Game.Directing;
 using black_friday.Game.Casting;
-
 namespace black_friday.Game.Scripting{
     class ManageAmmoCountAction : Action{
+        
         
         public ManageAmmoCountAction(){
         }
@@ -14,9 +14,49 @@ namespace black_friday.Game.Scripting{
             MallCop mallCop = (MallCop) mallcopActor;
 
             foreach(Actor actor in infoActors){
-                if (actor.GetTextColor() == Constants.BANNER_RED){
+                if (actor.GetPosition().Equals(new Point(0 + 25, 0 + 20))){
                     actor.SetText($"AMMO: {mallCop.GetAmmo()}");
+                    actor.SetTextColor(new Color(GetColorNumber(mallCop), 255, GetColorNumber(mallCop), 175));
                 }
+            }
+        }
+
+        private int GetColorNumber(MallCop mallCop){
+            int frameTick = mallCop.GetFrameTick();
+            //if(frameTick == 0){frameTick = 1;}
+            //return (int) (255 % ((decimal) (frameTick / Constants.COP_RELOAD_TIME) * 255));
+            if ((double) frameTick / Constants.COP_RELOAD_TIME >= 1){
+                return 0;
+            }
+            if ((double) frameTick / Constants.COP_RELOAD_TIME >= .9){
+                return 26;
+            }
+            if ((double) frameTick / Constants.COP_RELOAD_TIME >= .8){
+                return 51;
+            }
+            if ((double) frameTick / Constants.COP_RELOAD_TIME >= .7){
+                return 77;
+            }
+            if ((double) frameTick / Constants.COP_RELOAD_TIME >= .6){
+                return 102;
+            }
+            if ((double) frameTick / Constants.COP_RELOAD_TIME >= .5){
+                return 128;
+            }
+            if ((double) frameTick / Constants.COP_RELOAD_TIME >= .4){
+                return 153;
+            }
+            if ((double) frameTick / Constants.COP_RELOAD_TIME >= .3){
+                return 179;
+            }
+            if ((double) frameTick / Constants.COP_RELOAD_TIME >= .2){
+                return 204;
+            }
+            if ((double) frameTick / Constants.COP_RELOAD_TIME >= .1){
+                return 230;
+            }
+            else{
+                return 255;
             }
         }
     }

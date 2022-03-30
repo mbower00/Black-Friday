@@ -375,6 +375,7 @@ namespace black_friday{
             shoplifterScript.AddAction("update", new HandlePunchCollisionAction());
             shoplifterScript.AddAction("update", new HandleToasterCollisionAction());
             shoplifterScript.AddAction("update", new ReviveZombiesAction());
+            shoplifterScript.AddAction("update", new ReloadMallCopGunAction());
             shoplifterScript.AddAction("update", new HandleVictoryShoplifter());
             //Add OUTPUT action(s) to the script for the SHOPLIFTER scene
             shoplifterScript.AddAction("output", new DrawActorsAction(videoService));
@@ -407,7 +408,7 @@ namespace black_friday{
             gameOverInfo.SetTextColor(Constants.WHITE);
             gameOverInfo.SetWidth(700);
             gameOverInfo.SetHeight(100);
-            gameOverInfo.SetFontSize(100);
+            gameOverInfo.SetFontSize(75);
             //Create the _quickRestartButton_ actor
             Button quickRestartButton = new Button();
             quickRestartButton.SetColor(Constants.BANNER_BLUE);

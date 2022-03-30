@@ -128,8 +128,11 @@ namespace black_friday.Game.Services{
         /// <returns>A Raylib color.</returns>
         private Raylib_cs.Color ToRaylibColor(Casting.Color color)
         {
+            
+            
             int r = color.GetRed();
             int g = color.GetGreen();
+            if(color.GetGreen() > 255){g = 255;}
             int b = color.GetBlue();
             int a = color.GetAlpha();
             return new Raylib_cs.Color(r, g, b, a);

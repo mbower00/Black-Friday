@@ -25,6 +25,7 @@ namespace black_friday.Game.Scripting{
                 
                 if (mouseService.IsButtonPressed("left") && mallCop.IsCollidingWith(player) && mallCop.IsEnoughAmmo()){
                     playersToKill.Add(player);
+                    Console.WriteLine("player shot");
                 }
             }
 
@@ -33,11 +34,17 @@ namespace black_friday.Game.Scripting{
 
                 if (mouseService.IsButtonPressed("left") && mallCop.IsCollidingWith(zombie) && mallCop.IsEnoughAmmo()){
                     zombiesToKill.Add(zombie);
+                    Console.WriteLine("zombie shot");
                 }
             }
 
             if(mouseService.IsButtonPressed("left") && mallCop.GetAmmo() > 0){
                 mallCop.DecrementAmmo();
+                Console.WriteLine($"ammo used... now at {mallCop.GetAmmo()}");
+                if(mallCop.GetAmmo() == 0){
+                    mallCop.ResetFrameTick();
+                    Console.WriteLine("Reset mall cop's Frame Tick");
+                }
             }
 
             handlePunchCollisionAction.KillPlayers(playersToKill);

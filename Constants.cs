@@ -3,6 +3,8 @@ using black_friday.Game.Casting;
 namespace black_friday{
     public class Constants
     {
+        public static int COP_RELOAD_TIME = 900; //IN FRAMES
+        public static bool COP_CAN_RELOAD = true;
         public static string TOASTER_ICON = " #";
         public static string DEAD_SHOPPER_FACE = " :(";
         public static string SHOPPER_FACE = " :)";
