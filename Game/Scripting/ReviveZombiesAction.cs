@@ -15,11 +15,14 @@ namespace black_friday.Game.Scripting{
             
             foreach(Actor i in zombies){
                 ZombieShopper zombie = (ZombieShopper) i;
-
-                if(zombie.GetFrameTick() >= Constants.ZOMBIE_REVIVE_TIME){
-                    zombiesToRevive.Add(zombie);
+                if(!zombie.GetIsAlive()){
+                    if(zombie.GetFrameTick() >= Constants.ZOMBIE_REVIVE_TIME){
+                        zombiesToRevive.Add(zombie);
+                    }
                 }
             }
+
+            ReviveZombies(zombiesToRevive);
         }
 
         public void ReviveZombies(List<ZombieShopper> zombiesToRevive){

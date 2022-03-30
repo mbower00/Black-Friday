@@ -38,9 +38,8 @@ namespace black_friday.Game.Scripting{
                             zombie.SetVelocity(zombie.GetDirection());
                         }
                     }
-
-                    zombie.IncrementFrameTick();
                 }
+                zombie.IncrementFrameTick();
             }
         }
     }

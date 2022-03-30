@@ -330,6 +330,7 @@ namespace black_friday{
             battleRoyaleScript.AddAction("update", new DirectZombieShoppersAction());
             battleRoyaleScript.AddAction("update", new MoveActorsAction());
             battleRoyaleScript.AddAction("update", new HandlePunchCollisionAction());
+            battleRoyaleScript.AddAction("update", new ReviveZombiesAction());
             battleRoyaleScript.AddAction("update", new HandleVictoryRoyale());
             //Add OUTPUT action(s) to the script for the BATTLE ROYALE scene
             battleRoyaleScript.AddAction("output", new DrawActorsAction(videoService));
@@ -373,6 +374,7 @@ namespace black_friday{
             shoplifterScript.AddAction("update", new MoveMallCopAction());
             shoplifterScript.AddAction("update", new HandlePunchCollisionAction());
             shoplifterScript.AddAction("update", new HandleToasterCollisionAction());
+            shoplifterScript.AddAction("update", new ReviveZombiesAction());
             shoplifterScript.AddAction("update", new HandleVictoryShoplifter());
             //Add OUTPUT action(s) to the script for the SHOPLIFTER scene
             shoplifterScript.AddAction("output", new DrawActorsAction(videoService));
