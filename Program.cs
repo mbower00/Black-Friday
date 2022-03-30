@@ -179,7 +179,7 @@ namespace black_friday{
             rulesInfo.SetTextColor(Constants.WHITE);
             rulesInfo.SetWidth(800);
             rulesInfo.SetHeight(300);
-            rulesInfo.SetFontSize(50);
+            rulesInfo.SetFontSize(35);
             //Create the _playerSelectButton_ actor
             Button playerSelectButton = new Button();
            playerSelectButton.SetColor(Constants.BANNER_GREEN);
