@@ -7,6 +7,7 @@ namespace black_friday{
         public static string DEAD_SHOPPER_FACE = " :(";
         public static string SHOPPER_FACE = " :)";
         public static string SHOPPER_PUNCHING_FACE = ">:(";
+        public static int ZOMBIE_REVIVE_TIME = 300; //IN FRAMES
         public static int PUNCH_DURATION = 30; //IN FRAMES
         public static int PUNCH_COOLDOWN_DURATION = 120; //IN FRAMES
         public static int SHOPPER_SPEED = 5;
