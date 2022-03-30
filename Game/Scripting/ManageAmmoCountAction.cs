@@ -24,35 +24,35 @@ namespace black_friday.Game.Scripting{
         private int GetColorNumber(MallCop mallCop){
             int frameTick = mallCop.GetFrameTick();
             //if(frameTick == 0){frameTick = 1;}
-            //return (int) (255 % ((decimal) (frameTick / Constants.COP_RELOAD_TIME) * 255));
-            if ((double) frameTick / Constants.COP_RELOAD_TIME >= 1){
+            //return (int) (255 % ((decimal) (frameTick / Constants.GET_COP_RELOAD_TIME()) * 255));
+            if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= 1){
                 return 0;
             }
-            if ((double) frameTick / Constants.COP_RELOAD_TIME >= .9){
+            if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .9){
                 return 26;
             }
-            if ((double) frameTick / Constants.COP_RELOAD_TIME >= .8){
+            if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .8){
                 return 51;
             }
-            if ((double) frameTick / Constants.COP_RELOAD_TIME >= .7){
+            if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .7){
                 return 77;
             }
-            if ((double) frameTick / Constants.COP_RELOAD_TIME >= .6){
+            if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .6){
                 return 102;
             }
-            if ((double) frameTick / Constants.COP_RELOAD_TIME >= .5){
+            if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .5){
                 return 128;
             }
-            if ((double) frameTick / Constants.COP_RELOAD_TIME >= .4){
+            if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .4){
                 return 153;
             }
-            if ((double) frameTick / Constants.COP_RELOAD_TIME >= .3){
+            if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .3){
                 return 179;
             }
-            if ((double) frameTick / Constants.COP_RELOAD_TIME >= .2){
+            if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .2){
                 return 204;
             }
-            if ((double) frameTick / Constants.COP_RELOAD_TIME >= .1){
+            if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .1){
                 return 230;
             }
             else{
