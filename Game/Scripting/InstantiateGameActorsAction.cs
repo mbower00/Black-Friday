@@ -20,6 +20,7 @@ namespace black_friday.Game.Scripting{
                 cast.AddActor("zombie", new ZombieShopper());
             }
 
+
             //Create the _timer_ actor
             Game.Casting.Timer timer = new Game.Casting.Timer();
             timer.SetColor(Constants.CLEAR);

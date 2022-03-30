@@ -3,6 +3,7 @@ using black_friday.Game.Casting;
 namespace black_friday{
     public class Constants
     {
+        public static string TOASTER_ICON = " #";
         public static string DEAD_SHOPPER_FACE = " :(";
         public static string SHOPPER_FACE = " :)";
         public static string SHOPPER_PUNCHING_FACE = ">:(";
@@ -19,6 +20,7 @@ namespace black_friday{
         public static int PLAYER_COUNT = 2;
         public static int FRAME_RATE = 60;
         public static int FONT_SIZE = 15;
+        public static int EXTRA_AMMO = 0;
         public static string CAPTION = "Black Friday";
         public static Color RED = new Color(255, 0, 0);
         public static Color BANNER_RED = new Color(255, 0, 0, 175);

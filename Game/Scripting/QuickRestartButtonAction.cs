@@ -18,6 +18,9 @@ namespace black_friday.Game.Scripting{
                             case "battleroyale":
                                 scene.GetNextSceneInfo().SetNextSceneName("battleroyale");
                                 break;
+                            case "shoplifter":
+                                scene.GetNextSceneInfo().SetNextSceneName("shoplifter");
+                                break;
                             default:
                                 Console.WriteLine("default case in QuickRestartButtonAction");
                                 scene.GetNextSceneInfo().SetNextSceneName("battleroyale");

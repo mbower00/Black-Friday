@@ -50,6 +50,7 @@ namespace black_friday.Game.Scripting{
                 deadPlayer.SetTextColor(Constants.BANNER_RED);
                 deadPlayer.SetText(Constants.DEAD_SHOPPER_FACE);
                 deadPlayer.SetVelocity(new Point(0, 0));
+                deadPlayer.SetScore(0);
             }
         }
 
@@ -59,6 +60,7 @@ namespace black_friday.Game.Scripting{
                 deadZombie.SetColor(Constants.CLEAR);
                 deadZombie.SetText(Constants.DEAD_SHOPPER_FACE);
                 deadZombie.SetVelocity(new Point(0, 0));
+                deadZombie.ResetFrameTick();
             }
         }
 

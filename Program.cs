@@ -59,10 +59,21 @@ namespace black_friday{
             battleRoyaleButton.SetWidth(500);
             battleRoyaleButton.SetHeight(50);
             battleRoyaleButton.SetFontSize(50);
+            //Create the shoplifterButton actor
+            Button shoplifterButton = new Button();
+            shoplifterButton.SetColor(Constants.BANNER_GREEN);
+            Point shoplifterButtonStartingPoint = new Point(Constants.MAX_X / 2 - 400, 0 + 305);
+            shoplifterButton.SetPosition(shoplifterButtonStartingPoint);
+            shoplifterButton.SetText("Shoplifter");
+            shoplifterButton.SetTextColor(Constants.WHITE);
+            shoplifterButton.SetWidth(500);
+            shoplifterButton.SetHeight(50);
+            shoplifterButton.SetFontSize(50);
             //Add actor(s) to the cast for the HOME scene
             homeCast.AddActor("info", homeTitle);
             homeCast.AddActor("button", battleRoyaleButton);
             homeCast.AddActor("button", settingsButton);
+            homeCast.AddActor("button", shoplifterButton);
             //Create the script for the HOME scene
             Script homeScript = new Script();
             //Add INPUT action(s) to the script for the HOME scene
@@ -70,6 +81,7 @@ namespace black_friday{
             //Add UPDATE action(s) to the script for the HOME scene
                 homeScript.AddAction("update", new SettingsButtonAction());
                 homeScript.AddAction("update", new BattleRoyaleButtonAction());
+                homeScript.AddAction("update", new ShoplifterButtonAction());
             //Add OUTPUT action(s) to the script for the HOME scene
             homeScript.AddAction("output", new DrawActorsAction(videoService));
             //Add the cast and script to the HOME scene
@@ -327,6 +339,49 @@ namespace black_friday{
 
 
 
+            //CREATE THE SHOPLIFTER SCENE
+            Scene shoplifterScene = new Scene();
+            shoplifterScene.SetIsGameScene(true);
+            //Create the script for the SHOPLIFTER scene
+            Script shoplifterScript = new Script();
+            //Add START action(s) to the script for the SHOPLIFTER scene (will only execute once (before the scene's loop starts))
+            shoplifterScript.AddAction("start", new InstantiateGameActorsAction());
+            shoplifterScript.AddAction("start", new InstantiateShoplifterActorsAction());
+            //Add INPUT action(s) to the script for the SHOPLIFTER scene
+            shoplifterScript.AddAction("input", new ControlPlayer1Action());
+            shoplifterScript.AddAction("input", new ControlPlayer2Action());
+            shoplifterScript.AddAction("input", new ControlPlayer3Action());
+            shoplifterScript.AddAction("input", new ControlPlayer4Action());
+            shoplifterScript.AddAction("input", new ControlPlayer5Action());
+            shoplifterScript.AddAction("input", new ControlPlayer6Action());
+            shoplifterScript.AddAction("input", new ControlPlayer7Action());
+            shoplifterScript.AddAction("input", new ControlPlayer8Action());
+            shoplifterScript.AddAction("input", new ControlPlayer9Action());
+            shoplifterScript.AddAction("input", new ControlPlayer10Action());
+            shoplifterScript.AddAction("input", new ControlPlayer11Action());
+            shoplifterScript.AddAction("input", new ControlPlayer12Action());
+            shoplifterScript.AddAction("input", new ControlPlayer13Action());
+            shoplifterScript.AddAction("input", new ControlPlayer14Action());
+            shoplifterScript.AddAction("input", new ControlPlayer15Action());
+            //Add UPDATE action(s) to the script for the SHOPLIFTER scene
+            shoplifterScript.AddAction("update", new ManageTimerAction());
+            shoplifterScript.AddAction("update", new ManageAmmoCountAction());
+            shoplifterScript.AddAction("update", new ManageScoreBannersAction());
+            shoplifterScript.AddAction("update", new MallCopGunAction());
+            shoplifterScript.AddAction("update", new DirectZombieShoppersAction());
+            shoplifterScript.AddAction("update", new MoveActorsAction());
+            shoplifterScript.AddAction("update", new MoveMallCopAction());
+            shoplifterScript.AddAction("update", new HandlePunchCollisionAction());
+            shoplifterScript.AddAction("update", new HandleToasterCollisionAction());
+            shoplifterScript.AddAction("update", new HandleVictoryShoplifter());
+            //Add OUTPUT action(s) to the script for the SHOPLIFTER scene
+            shoplifterScript.AddAction("output", new DrawActorsAction(videoService));
+            //Add the script to the SHOPLIFTER scene
+            shoplifterScene.SetScript(shoplifterScript);
+
+
+
+
             //CREATE THE GAME OVER SCENE
             Scene gameOverScene = new Scene();
             //Create the cast for the GAME OVER scene
@@ -416,6 +471,8 @@ namespace black_friday{
                     return battleRoyaleScene;
                 case "gameover":
                     return gameOverScene;
+                case "shoplifter":
+                    return shoplifterScene;
                 default:
                     return homeScene;
             }

@@ -28,6 +28,7 @@ namespace black_friday.Game.Scripting{
             playerCounts.Add(13);
             playerCounts.Add(14);
             playerCounts.Add(15);
+            playerCounts.Add(1);
         }
 
         public void Execute(Scene scene){
