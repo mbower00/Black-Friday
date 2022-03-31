@@ -19,6 +19,7 @@ namespace black_friday{
             VideoService videoService = new VideoService(false);
             //Create the MOUSE service
             MouseService mouseService = new MouseService();
+            AudioService audioService = new AudioService();
             
             //CREATE THE HOME SCENE
             Scene homeScene = new Scene();
@@ -78,7 +79,7 @@ namespace black_friday{
             //Create the script for the HOME scene
             Script homeScript = new Script();
             //Add INPUT action(s) to the script for the HOME scene
-                homeScript.AddAction("input", new ClickButtonsAction(mouseService));
+                homeScript.AddAction("input", new ClickButtonsAction(mouseService, audioService));
             //Add UPDATE action(s) to the script for the HOME scene
                 homeScript.AddAction("update", new SettingsButtonAction());
                 homeScript.AddAction("update", new BattleRoyaleButtonAction());
@@ -135,19 +136,42 @@ namespace black_friday{
             timerCountButton.SetWidth(500);
             timerCountButton.SetHeight(50);
             timerCountButton.SetFontSize(50);
+            //Create the shopperFaceButton actor
+            Button shopperFaceButton = new Button();
+            shopperFaceButton.SetColor(Constants.BANNER_BLUE);
+            Point shopperFaceButtonStartingPoint = new Point(Constants.MAX_X / 2 - 400, 0 + 405);
+            shopperFaceButton.SetPosition(shopperFaceButtonStartingPoint);
+            shopperFaceButton.SetText($"Shopper Face:{Constants.SHOPPER_FACE}");
+            shopperFaceButton.SetTextColor(Constants.WHITE);
+            shopperFaceButton.SetWidth(500);
+            shopperFaceButton.SetHeight(50);
+            shopperFaceButton.SetFontSize(50);
+            //Create the shopperSpeedButton actor
+            Button shopperSpeedButton = new Button();
+            shopperSpeedButton.SetColor(Constants.BANNER_BLUE);
+            Point shopperSpeedButtonStartingPoint = new Point(Constants.MAX_X / 2 - 400, 0 + 405);
+            shopperSpeedButton.SetPosition(shopperSpeedButtonStartingPoint);
+            shopperSpeedButton.SetText($"Shopper Speed: {Constants.SHOPPER_SPEED}");
+            shopperSpeedButton.SetTextColor(Constants.WHITE);
+            shopperSpeedButton.SetWidth(500);
+            shopperSpeedButton.SetHeight(50);
+            shopperSpeedButton.SetFontSize(50);
             //Add actor(s) to the cast for the SETTINGS scene
             settingsCast.AddActor("info", settingsTitle);
             settingsCast.AddActor("button", homeButton);
             settingsCast.AddActor("button", npcCountButton);
             settingsCast.AddActor("button", timerCountButton);
+            settingsCast.AddActor("button", shopperFaceButton);
+            settingsCast.AddActor("button", shopperSpeedButton);
             //Create the script for the SETTINGS scene
             Script settingsScript = new Script();
             //Add INPUT action(s) to the script for the SETTINGS scene
-            settingsScript.AddAction("input", new ClickButtonsAction(mouseService));
+            settingsScript.AddAction("input", new ClickButtonsAction(mouseService, audioService));
             //Add UPDATE action(s) to the script for the SETTINGS scene
             settingsScript.AddAction("update", new HomeButtonAction());
             settingsScript.AddAction("update", new NPCCountButtonAction());
             settingsScript.AddAction("update", new TimerCountButtonAction());
+            settingsScript.AddAction("update", new ShopperFaceButtonAction());
             //Add OUTPUT action(s) to the script for the SETTINGS scene
             settingsScript.AddAction("output", new DrawActorsAction(videoService));
             //Add the cast and script to the SETTINGS scene
@@ -208,7 +232,7 @@ namespace black_friday{
             //Create the script for the RULES scene
             Script rulesScript = new Script();
             //Add INPUT action(s) to the script for the RULES scene
-            rulesScript.AddAction("input", new ClickButtonsAction(mouseService));
+            rulesScript.AddAction("input", new ClickButtonsAction(mouseService, audioService));
             //Add UPDATE action(s) to the script for the RULES scene
             rulesScript.AddAction("update", new PlayerSelectButtonAction());
             rulesScript.AddAction("update", new HomeButtonAction());
@@ -288,7 +312,7 @@ namespace black_friday{
             //Create the script for the PLAYER SELECT scene
             Script playerSelectScript = new Script();
             //Add INPUT action(s) to the script for the PLAYER SELECT scene
-            playerSelectScript.AddAction("input", new ClickButtonsAction(mouseService));
+            playerSelectScript.AddAction("input", new ClickButtonsAction(mouseService, audioService));
             //Add UPDATE action(s) to the script for the PLAYER SELECT scene
             playerSelectScript.AddAction("update", new HomeButtonAction());
             playerSelectScript.AddAction("update", new PlayerNumberButtonAction());
@@ -438,7 +462,7 @@ namespace black_friday{
             //Create the script for the GAME OVER scene
             Script gameOverScript = new Script();
             //Add INPUT action(s) to the script for the GAME OVER scene
-            gameOverScript.AddAction("input", new ClickButtonsAction(mouseService));
+            gameOverScript.AddAction("input", new ClickButtonsAction(mouseService, audioService));
             //Add UPDATE action(s) to the script for the GAME OVER scene
             gameOverScript.AddAction("update", new HomeButtonAction());
             gameOverScript.AddAction("update", new QuickRestartButtonAction());
