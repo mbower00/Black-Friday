@@ -1,5 +1,6 @@
 using black_friday.Game.Casting;
 using black_friday.Game.Services;
+using black_friday.Game.Directing;
 
 
 namespace black_friday.Game.Scripting
@@ -17,6 +18,7 @@ namespace black_friday.Game.Scripting
 
         public void Execute(Scene scene)
         {
+            Cast cast = scene.GetCast();
             List<Actor> actors = cast.GetActors("sounds");
             foreach(Actor actor in actors){
                 Sound sound = (Sound)actor;
