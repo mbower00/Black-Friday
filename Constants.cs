@@ -9,7 +9,7 @@ namespace black_friday{
             return Constants.COP_RELOAD_TIME * Constants.FRAME_RATE;
         }
         public static bool COP_CAN_RELOAD = true;
-        public static string TOASTER_ICON = " #";
+        public static string TOASTER_ICON = " Õ";
         public static string DEAD_SHOPPER_FACE = " :(";
         public static string SHOPPER_FACE = " :)";
         public static string SHOPPER_PUNCHING_FACE = ">:(";
@@ -31,6 +31,10 @@ namespace black_friday{
         public static Color RED = new Color(255, 0, 0);
         public static Color BANNER_RED = new Color(255, 0, 0, 175);
         public static Color YELLOW = new Color(255, 255, 0);
+        public static Color BANNER_YELLOW = new Color(255, 255, 0, 175);
+        public static Color GREY = new Color(200, 200, 200);
+        public static Color BANNER_GREY = new Color(200, 200, 200, 175);
+
         public static Color GREEN = new Color(0, 255, 0);
         public static Color BANNER_GREEN = new Color(0, 255, 0, 175);
         public static Color BLUE = new Color(0, 0, 255);

@@ -16,19 +16,19 @@ namespace black_friday.Game.Scripting{
         public ShopperFaceButtonAction(){
             shopperFaces.Add(" :)");
             shopperFaces.Add(" :|");
-            shopperFaces.Add(" :\\");
+            shopperFaces.Add(":\\");
             shopperFaces.Add(" :]");
-            shopperFaces.Add(" :D");
+            shopperFaces.Add(":D");
         }
 
         public void Execute(Scene scene){
             List<Actor> buttons = scene.GetCast().GetActors("button");
             foreach(Actor actor in buttons){
-                if(actor.GetText() == $"Shopper Face:{Constants.SHOPPER_FACE}"){
+                if(actor.GetText() == $"Shopper Face: {Constants.SHOPPER_FACE}"){
                     Button button = (Button) actor;
                     if(button.GetIsClicked()){
                         Constants.SHOPPER_FACE = GetNextShopperFace();
-                        button.SetText($"Shopper Face:{Constants.SHOPPER_FACE}");
+                        button.SetText($"Shopper Face: {Constants.SHOPPER_FACE}");
                         button.SetIsClicked(false);
                     }
                 }

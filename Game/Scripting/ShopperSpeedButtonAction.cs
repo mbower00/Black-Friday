@@ -18,6 +18,7 @@ namespace black_friday.Game.Scripting{
             shopperSpeeds.Add(7);
             shopperSpeeds.Add(10);
             shopperSpeeds.Add(15);
+            shopperSpeeds.Add(3);
             shopperSpeeds.Add(1);
         }
 
@@ -27,7 +28,7 @@ namespace black_friday.Game.Scripting{
                 if(actor.GetText() == $"Shopper Speed: {Constants.SHOPPER_SPEED}"){
                     Button button = (Button) actor;
                     if(button.GetIsClicked()){
-                        Constants.TIMER_COUNT = GetNextshopperSpeed();
+                        Constants.SHOPPER_SPEED = GetNextshopperSpeed();
                         button.SetText($"Shopper Speed: {Constants.SHOPPER_SPEED}");
                         button.SetIsClicked(false);
                     }

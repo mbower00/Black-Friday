@@ -141,7 +141,7 @@ namespace black_friday{
             shopperFaceButton.SetColor(Constants.BANNER_BLUE);
             Point shopperFaceButtonStartingPoint = new Point(Constants.MAX_X / 2 - 400, 0 + 405);
             shopperFaceButton.SetPosition(shopperFaceButtonStartingPoint);
-            shopperFaceButton.SetText($"Shopper Face:{Constants.SHOPPER_FACE}");
+            shopperFaceButton.SetText($"Shopper Face: {Constants.SHOPPER_FACE}");
             shopperFaceButton.SetTextColor(Constants.WHITE);
             shopperFaceButton.SetWidth(500);
             shopperFaceButton.SetHeight(50);
@@ -240,6 +240,7 @@ namespace black_friday{
             rulesScript.AddAction("update", new SetRulesInfoAction());
             //Add OUTPUT action(s) to the script for the RULES scene
             rulesScript.AddAction("output", new DrawActorsAction(videoService));
+            rulesScript.AddAction("output", new PlaySoundAction(audioService));            
             //Add the cast and script to the RULES scene
             rulesScene.SetCast(rulesCast);
             rulesScene.SetScript(rulesScript);
