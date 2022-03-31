@@ -3,7 +3,8 @@ using System.IO;
 using Raylib_cs;
 
 
-namespace Unit06.Game.Services
+
+namespace black_friday.Game.Services
 {
     public class AudioService 
     {
