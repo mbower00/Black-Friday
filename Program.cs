@@ -149,7 +149,7 @@ namespace black_friday{
             //Create the shopperSpeedButton actor
             Button shopperSpeedButton = new Button();
             shopperSpeedButton.SetColor(Constants.BANNER_BLUE);
-            Point shopperSpeedButtonStartingPoint = new Point(Constants.MAX_X / 2 - 400, 0 + 405);
+            Point shopperSpeedButtonStartingPoint = new Point(Constants.MAX_X / 2 - 400, 0 + 505);
             shopperSpeedButton.SetPosition(shopperSpeedButtonStartingPoint);
             shopperSpeedButton.SetText($"Shopper Speed: {Constants.SHOPPER_SPEED}");
             shopperSpeedButton.SetTextColor(Constants.WHITE);
@@ -172,6 +172,7 @@ namespace black_friday{
             settingsScript.AddAction("update", new NPCCountButtonAction());
             settingsScript.AddAction("update", new TimerCountButtonAction());
             settingsScript.AddAction("update", new ShopperFaceButtonAction());
+            settingsScript.AddAction("update", new ShopperSpeedButtonAction());
             //Add OUTPUT action(s) to the script for the SETTINGS scene
             settingsScript.AddAction("output", new DrawActorsAction(videoService));
             //Add the cast and script to the SETTINGS scene
