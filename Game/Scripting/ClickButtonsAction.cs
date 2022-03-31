@@ -6,6 +6,7 @@ namespace black_friday.Game.Scripting{
     class ClickButtonsAction : Action{
         
         MouseService mouseService;
+        AudioService audioService;
         
         public ClickButtonsAction(MouseService mouseService, AudioService audioService){
             this.mouseService = mouseService;
