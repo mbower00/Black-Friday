@@ -15,7 +15,7 @@ namespace black_friday.Game.Scripting{
                     switch(scene.GetNextSceneInfo().GetGameMode()){
                         case "battleroyale":
                             actor.SetText("Carol down the street KNEW\nyou were getting the new\nBarbie bike for your daughter\nFind her and get rid of her\n, you're a better mom than her after all\n(Hint: Try to mimic \nthe npcs to remain undetected");
-                            scene.GetCast().AddActor("sound", new Sound("black_friday\Game\Props\Informational\BRJ.wav"));
+                            scene.GetCast().AddActor("sound", new Sound("BRJ.wav"));
                             break;
                         case "shoplifter":
                             actor.SetText("Shoplifters: steal toasters\n(Hint: you can punch others)\nMall Cop (uses mouse): \neliminate shoplifters");

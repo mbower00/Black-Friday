@@ -19,11 +19,11 @@ namespace black_friday.Game.Scripting
         public void Execute(Scene scene)
         {
             Cast cast = scene.GetCast();
-            List<Actor> actors = cast.GetActors("sounds");
+            List<Actor> actors = cast.GetActors("sound");
             foreach(Actor actor in actors){
                 Sound sound = (Sound)actor;
                 audioService.PlaySound(sound);
-                cast.RemoveActor("sounds",sound);
+                cast.RemoveActor("sound",sound);
             }
             
         }

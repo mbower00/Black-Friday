@@ -19,7 +19,9 @@ namespace black_friday{
             VideoService videoService = new VideoService(false);
             //Create the MOUSE service
             MouseService mouseService = new MouseService();
+
             AudioService audioService = new AudioService();
+            audioService.LoadSounds(".\\Game\\Props");
             
             //CREATE THE HOME SCENE
             Scene homeScene = new Scene();
