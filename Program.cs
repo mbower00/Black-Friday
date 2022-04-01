@@ -28,8 +28,9 @@ namespace black_friday{
             Actor homeBackground = new Actor();
             homeBackground.SetWidth(1350);
             homeBackground.SetHeight(900);
-            homeBackground.SetPath("./black_friday/Game/Props/WalmartExterior.PNG");
-            //Create the _homeTitle_ actor
+            homeBackground.SetPath("Game/Props/walmart-interior.png");
+            homeBackground.SetFontSize(50);
+            homeBackground.SetPosition(new Point (0,0));
             Actor homeTitle = new Actor();
             homeTitle.SetColor(Constants.BANNER_WHITE);
             Point homeTitleStartingPoint = new Point(Constants.MAX_X / 2 - 250, 0 + 5);
