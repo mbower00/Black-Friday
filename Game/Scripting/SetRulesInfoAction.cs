@@ -14,7 +14,8 @@ namespace black_friday.Game.Scripting{
                 if(actor.GetWidth() == 800){
                     switch(scene.GetNextSceneInfo().GetGameMode()){
                         case "battleroyale":
-                            actor.SetText("Find the other players while\nbeing undetected to knock \nthem out! (Hint: Try to mimic \nthe npcs to remain undetected");
+                            actor.SetText("Carol down the street KNEW\nyou were getting the new\nBarbie bike for your daughter\nFind her and get rid of her\n, you're a better mom than her after all\n(Hint: Try to mimic \nthe npcs to remain undetected");
+                            scene.GetCast().AddActor("sound", new Sound("BRJ.wav"));
                             break;
                         case "shoplifter":
                             actor.SetText("Shoplifters: steal toasters\n(Hint: you can punch others)\nMall Cop (uses mouse): \neliminate shoplifters");

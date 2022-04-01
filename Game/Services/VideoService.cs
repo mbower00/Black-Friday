@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Raylib_cs;
 using black_friday.Game.Casting;
+using System.Numerics;
 
 
 namespace black_friday.Game.Services{
@@ -14,7 +15,10 @@ namespace black_friday.Game.Services{
     public class VideoService
     {
         private bool debug = false;
-
+        
+        private Dictionary<string, Texture2D> _textures 
+            = new Dictionary<string, Texture2D>();
+        
         /// <summary>
         /// Constructs a new instance of KeyboardService using the given cell size.
         /// </summary>
@@ -46,11 +50,24 @@ namespace black_friday.Game.Services{
             }
         }
 
+        public void DrawActorImage(Actor actor)
+        {
+            string path = actor.GetPath();
+            if (!_textures.ContainsKey(path))
+            {
+                _textures[path] = Raylib.LoadTexture(path);
+            }
+            Texture2D texture = _textures[path];
+            Vector2 position = new Vector2(actor.GetPosition().GetX(), actor.GetPosition().GetY());
+            Raylib_cs.Color tint = Raylib_cs.Color.WHITE;
+            Raylib.DrawTextureEx(texture, position, 0f, 1f, Raylib_cs.Color.WHITE);
+        }
+
         /// <summary>
         /// Draws the given actor's text on the screen.
         /// </summary>
         /// <param name="actor">The actor to draw.</param>
-        public void DrawActor(Actor actor)
+        public void DrawActorText(Actor actor)
         {
             string text = actor.GetText();
             int x = actor.GetPosition().GetX();
@@ -62,7 +79,6 @@ namespace black_friday.Game.Services{
             Raylib_cs.Color textcolor = ToRaylibColor(actor.GetTextColor());
             Raylib_cs.Color color = ToRaylibColor(c);
 
-
             DrawRectangle(x, y, width, height, c);
             Raylib.DrawText(text, x, y, fontSize, textcolor);
         }
@@ -71,11 +87,11 @@ namespace black_friday.Game.Services{
         /// Draws the given list of actors on the screen.
         /// </summary>
         /// <param name="actors">The list of actors to draw.</param>
-        public void DrawActors(List<Actor> actors)
+        public void DrawActorTexts(List<Actor> actors)
         {
             foreach (Actor actor in actors)
             {
-                DrawActor(actor);
+                DrawActorText(actor);
             }
         }
         
