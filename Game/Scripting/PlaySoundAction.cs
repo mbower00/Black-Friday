@@ -1,5 +1,6 @@
 using black_friday.Game.Casting;
 using black_friday.Game.Services;
+using black_friday.Game.Directing;
 
 
 namespace black_friday.Game.Scripting
@@ -7,19 +8,24 @@ namespace black_friday.Game.Scripting
     public class PlaySoundAction : Action
     {
         private AudioService audioService;
-        private string filename;
+        
 
-        public PlaySoundAction(AudioService audioService, string filename)
+        public PlaySoundAction(AudioService audioService)
         {
             this.audioService = audioService;
-            this.filename = filename;
+           
         }
 
-        public void Execute(Cast cast, Script script, ActionCallback callback)
+        public void Execute(Scene scene)
         {
-            Sound sound = new Sound(filename);
-            audioService.PlaySound(sound);
-            script.RemoveAction(Constants.OUTPUT, this);
+            Cast cast = scene.GetCast();
+            List<Actor> actors = cast.GetActors("sound");
+            foreach(Actor actor in actors){
+                Sound sound = (Sound)actor;
+                audioService.PlaySound(sound);
+                cast.RemoveActor("sound",sound);
+            }
+            
         }
     }
 }

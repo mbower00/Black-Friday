@@ -22,7 +22,7 @@ namespace black_friday.Game.Scripting{
             for(int i=0; i < Constants.GET_TOASTER_COUNT(); i++){
                 Actor toaster = new Actor();
                 toaster.SetText(Constants.TOASTER_ICON);
-                toaster.SetColor(Constants.YELLOW);
+                toaster.SetColor(Constants.BANNER_YELLOW);
                 toaster.SetTextColor(Constants.BLACK);
                 toaster.SetWidth(25);
                 toaster.SetHeight(25);

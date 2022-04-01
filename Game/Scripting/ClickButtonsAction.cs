@@ -6,10 +6,13 @@ namespace black_friday.Game.Scripting{
     class ClickButtonsAction : Action{
         
         MouseService mouseService;
+        AudioService audioService;
         
-        public ClickButtonsAction(MouseService mouseService){
+        public ClickButtonsAction(MouseService mouseService, AudioService audioService){
             this.mouseService = mouseService;
+            this.audioService = audioService;
         }
+        
 
         public void Execute(Scene scene){
             List<Actor> buttons = scene.GetCast().GetActors("button");
@@ -27,6 +30,8 @@ namespace black_friday.Game.Scripting{
             Point mousePoint = mouseService.GetCoordinates();
             foreach(Point point in points){
                 if (mousePoint.Equals(point) && mouseService.IsButtonPressed("left")){
+                     Sound sound = new Sound("props/");
+                     
                     return true;
                 }
             }

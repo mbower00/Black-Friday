@@ -3,7 +3,7 @@ namespace black_friday.Game.Casting
     /// <summary>
     /// An sound.
     /// </summary>
-    public class Sound
+    public class Sound : Actor
     {
         private string filename;
         private int volume;
