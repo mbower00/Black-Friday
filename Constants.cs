@@ -137,7 +137,7 @@ namespace black_friday{
         public static int CELL_SIZE = 15;
         public static int MAX_X = 1350;
         public static int MAX_Y = 900;
-        public static int TIMER_COUNT = 100;
+        public static int TIMER_COUNT = 60;
         public static int NPC_COUNT = 10;
         public static int PLAYER_COUNT = 2;
         public static int FONT_SIZE = 15;

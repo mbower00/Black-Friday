@@ -140,7 +140,7 @@ namespace black_friday{
             npcCountButton.SetPosition(npcCountButtonStartingPoint);
             npcCountButton.SetText($"NPC Count: {Constants.NPC_COUNT}");
             npcCountButton.SetTextColor(Constants.WHITE);
-            npcCountButton.SetWidth(500);
+            npcCountButton.SetWidth(570);
             npcCountButton.SetHeight(50);
             npcCountButton.SetFontSize(50);
             //Create the timerCountButton actor
@@ -150,7 +150,7 @@ namespace black_friday{
             timerCountButton.SetPosition(timerCountButtonStartingPoint);
             timerCountButton.SetText($"Timer Count: {Constants.TIMER_COUNT}");
             timerCountButton.SetTextColor(Constants.WHITE);
-            timerCountButton.SetWidth(500);
+            timerCountButton.SetWidth(570);
             timerCountButton.SetHeight(50);
             timerCountButton.SetFontSize(50);
             //Create the shopperFaceButton actor
@@ -160,7 +160,7 @@ namespace black_friday{
             shopperFaceButton.SetPosition(shopperFaceButtonStartingPoint);
             shopperFaceButton.SetText($"Shopper Face: {Constants.SHOPPER_FACE}");
             shopperFaceButton.SetTextColor(Constants.WHITE);
-            shopperFaceButton.SetWidth(500);
+            shopperFaceButton.SetWidth(570);
             shopperFaceButton.SetHeight(50);
             shopperFaceButton.SetFontSize(50);
             //Create the shopperSpeedButton actor
@@ -170,7 +170,7 @@ namespace black_friday{
             shopperSpeedButton.SetPosition(shopperSpeedButtonStartingPoint);
             shopperSpeedButton.SetText($"Shopper Speed: {Constants.SHOPPER_SPEED}");
             shopperSpeedButton.SetTextColor(Constants.WHITE);
-            shopperSpeedButton.SetWidth(500);
+            shopperSpeedButton.SetWidth(570);
             shopperSpeedButton.SetHeight(50);
             shopperSpeedButton.SetFontSize(50);
             //Create the extraAmmoButton actor
@@ -180,7 +180,7 @@ namespace black_friday{
             extraAmmoButton.SetPosition(extraAmmoButtonStartingPoint);
             extraAmmoButton.SetText($"Extra Ammo Count: {Constants.EXTRA_AMMO}");
             extraAmmoButton.SetTextColor(Constants.WHITE);
-            extraAmmoButton.SetWidth(500);
+            extraAmmoButton.SetWidth(570);
             extraAmmoButton.SetHeight(50);
             extraAmmoButton.SetFontSize(50);
             //Create the copCanReloadButton actor
@@ -190,7 +190,7 @@ namespace black_friday{
             copCanReloadButton.SetPosition(copCanReloadButtonStartingPoint);
             copCanReloadButton.SetText($"Cop Can Reload: {Constants.COP_CAN_RELOAD}");
             copCanReloadButton.SetTextColor(Constants.WHITE);
-            copCanReloadButton.SetWidth(500);
+            copCanReloadButton.SetWidth(570);
             copCanReloadButton.SetHeight(50);
             copCanReloadButton.SetFontSize(50);
             //Add actor(s) to the cast for the SETTINGS scene
