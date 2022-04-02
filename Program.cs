@@ -173,6 +173,26 @@ namespace black_friday{
             shopperSpeedButton.SetWidth(500);
             shopperSpeedButton.SetHeight(50);
             shopperSpeedButton.SetFontSize(50);
+            //Create the extraAmmoButton actor
+            Button extraAmmoButton = new Button();
+            extraAmmoButton.SetColor(Constants.BANNER_BLUE);
+            Point extraAmmoButtonStartingPoint = new Point(Constants.MAX_X / 2 - 400, 0 + 605);
+            extraAmmoButton.SetPosition(extraAmmoButtonStartingPoint);
+            extraAmmoButton.SetText($"Extra Ammo Count: {Constants.EXTRA_AMMO}");
+            extraAmmoButton.SetTextColor(Constants.WHITE);
+            extraAmmoButton.SetWidth(500);
+            extraAmmoButton.SetHeight(50);
+            extraAmmoButton.SetFontSize(50);
+            //Create the copCanReloadButton actor
+            Button copCanReloadButton = new Button();
+            copCanReloadButton.SetColor(Constants.BANNER_BLUE);
+            Point copCanReloadButtonStartingPoint = new Point(Constants.MAX_X / 2 - 400, 0 + 705);
+            copCanReloadButton.SetPosition(copCanReloadButtonStartingPoint);
+            copCanReloadButton.SetText($"Cop Can Reload: {Constants.COP_CAN_RELOAD}");
+            copCanReloadButton.SetTextColor(Constants.WHITE);
+            copCanReloadButton.SetWidth(500);
+            copCanReloadButton.SetHeight(50);
+            copCanReloadButton.SetFontSize(50);
             //Add actor(s) to the cast for the SETTINGS scene
             settingsCast.AddActor("background", homeBackground);
             settingsCast.AddActor("info", settingsTitle);
@@ -181,6 +201,8 @@ namespace black_friday{
             settingsCast.AddActor("button", timerCountButton);
             settingsCast.AddActor("button", shopperFaceButton);
             settingsCast.AddActor("button", shopperSpeedButton);
+            settingsCast.AddActor("button", extraAmmoButton);
+            settingsCast.AddActor("button", copCanReloadButton);
             //Create the script for the SETTINGS scene
             Script settingsScript = new Script();
             //Add INPUT action(s) to the script for the SETTINGS scene
