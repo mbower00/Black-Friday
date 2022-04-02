@@ -18,8 +18,8 @@ namespace black_friday.Game.Scripting{
             shopperSpeeds.Add(7);
             shopperSpeeds.Add(10);
             shopperSpeeds.Add(15);
-            shopperSpeeds.Add(3);
             shopperSpeeds.Add(1);
+            shopperSpeeds.Add(3);
         }
 
         public void Execute(Scene scene){
