@@ -213,6 +213,8 @@ namespace black_friday{
             settingsScript.AddAction("update", new TimerCountButtonAction());
             settingsScript.AddAction("update", new ShopperFaceButtonAction());
             settingsScript.AddAction("update", new ShopperSpeedButtonAction());
+            settingsScript.AddAction("update", new CopCanReloadButtonAction());
+            settingsScript.AddAction("update", new ExtraAmmoButtonAction());
             //Add OUTPUT action(s) to the script for the SETTINGS scene
             settingsScript.AddAction("output", new DrawActorsAction(videoService));
             //Add the cast and script to the SETTINGS scene

@@ -25,11 +25,11 @@ namespace black_friday.Game.Scripting{
         public void Execute(Scene scene){
             List<Actor> buttons = scene.GetCast().GetActors("button");
             foreach(Actor actor in buttons){
-                if(actor.GetText() == $"Extra Ammo: {Constants.EXTRA_AMMO}"){
+                if(actor.GetText() == $"Extra Ammo Count: {Constants.EXTRA_AMMO}"){
                     Button button = (Button) actor;
                     if(button.GetIsClicked()){
                         Constants.EXTRA_AMMO = GetNextOption();
-                        button.SetText($"Extra Ammo: {Constants.EXTRA_AMMO}");
+                        button.SetText($"Extra Ammo Count: {Constants.EXTRA_AMMO}");
                         button.SetIsClicked(false);
                     }
                 }
