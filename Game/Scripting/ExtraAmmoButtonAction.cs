@@ -20,6 +20,8 @@ namespace black_friday.Game.Scripting{
             options.Add(3);
             options.Add(4);
             options.Add(5);
+            options.Add(10);
+            options.Add(50);
         }
 
         public void Execute(Scene scene){
