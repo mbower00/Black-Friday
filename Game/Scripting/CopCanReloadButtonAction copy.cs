@@ -7,35 +7,39 @@ using System.Collections.Generic;
 namespace black_friday.Game.Scripting{
     class ExtraAmmoButtonAction : Action{
         
-        private List<bool> options = new List<bool>();
+        private List<int> options = new List<int>();
         private int optionIndex = 0;
         
         
 
 
         public ExtraAmmoButtonAction(){
-            options.Add(true);
-            options.Add(false);
+            options.Add(0);
+            options.Add(1);
+            options.Add(2);
+            options.Add(3);
+            options.Add(4);
+            options.Add(5);
         }
 
         public void Execute(Scene scene){
             List<Actor> buttons = scene.GetCast().GetActors("button");
             foreach(Actor actor in buttons){
-                if(actor.GetText() == $"Cop Can Reload: {Constants.COP_CAN_RELOAD}"){
+                if(actor.GetText() == $"Extra Ammo: {Constants.EXTRA_AMMO}"){
                     Button button = (Button) actor;
                     if(button.GetIsClicked()){
-                        Constants.COP_CAN_RELOAD = GetNextOption();
-                        button.SetText($"Cop Can Reload: {Constants.COP_CAN_RELOAD}");
+                        Constants.EXTRA_AMMO = GetNextOption();
+                        button.SetText($"Extra Ammo: {Constants.EXTRA_AMMO}");
                         button.SetIsClicked(false);
                     }
                 }
             }
         }
 
-        private bool GetNextOption(){
+        private int GetNextOption(){
             optionIndex++;
             if (optionIndex >= options.Count()){optionIndex = 0;}
-            bool NextOption = options[optionIndex];
+            int NextOption = options[optionIndex];
             return NextOption;
         }
     }
