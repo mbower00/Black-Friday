@@ -11,7 +11,7 @@ namespace black_friday.Game.Scripting{
         public void Execute(Scene scene){
             List<Actor> infos = scene.GetCast().GetActors("info");
             foreach(Actor actor in infos){
-                if(actor.GetFontSize() == 75){
+                if(actor.GetFontSize() == 52){
                     actor.SetText($"{scene.GetNextSceneInfo().GetWinner()} Won!");
                 }
             }

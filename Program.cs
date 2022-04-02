@@ -518,7 +518,7 @@ namespace black_friday{
             gameOverInfo.SetTextColor(Constants.WHITE);
             gameOverInfo.SetWidth(700);
             gameOverInfo.SetHeight(100);
-            gameOverInfo.SetFontSize(75);
+            gameOverInfo.SetFontSize(52);
             //Create the _quickRestartButton_ actor
             Button quickRestartButton = new Button();
             quickRestartButton.SetColor(Constants.BANNER_BLUE);
