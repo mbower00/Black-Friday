@@ -21,7 +21,7 @@ namespace black_friday{
             MouseService mouseService = new MouseService();
 
             AudioService audioService = new AudioService();
-            audioService.LoadSounds(".\\Game\\Props");
+            audioService.LoadSounds("Game/Props/Sounds");
             
             //CREATE THE HOME SCENE
             Scene homeScene = new Scene();
@@ -31,11 +31,13 @@ namespace black_friday{
             Actor homeBackground = new Actor();
             homeBackground.SetWidth(1350);
             homeBackground.SetHeight(900);
-            homeBackground.SetPath("Game/Props/walmart-interior.png");
+            homeBackground.SetPath("Game/Props/store_exterior.png"); //comment out for a non-pixel version
+                homeBackground.SetPath("Game/Props/store_exterior_pixel.png");
             homeBackground.SetFontSize(50);
             homeBackground.SetPosition(new Point (0,0));
+            //Create the home title actor
             Actor homeTitle = new Actor();
-            homeTitle.SetColor(Constants.BANNER_WHITE);
+            homeTitle.SetColor(Constants.BANNER_GREY);
             Point homeTitleStartingPoint = new Point(Constants.MAX_X / 2 - 250, 0 + 5);
             homeTitle.SetPosition(homeTitleStartingPoint);
             homeTitle.SetText("Black Friday!");
@@ -73,20 +75,32 @@ namespace black_friday{
             shoplifterButton.SetWidth(500);
             shoplifterButton.SetHeight(50);
             shoplifterButton.SetFontSize(50);
+            //Create the teamBattleButton actor
+            Button teamBattleButton = new Button();
+            teamBattleButton.SetColor(Constants.BANNER_GREEN);
+            Point teamBattleButtonStartingPoint = new Point(Constants.MAX_X / 2 - 400, 0 + 405);
+            teamBattleButton.SetPosition(teamBattleButtonStartingPoint);
+            teamBattleButton.SetText("Team Battle");
+            teamBattleButton.SetTextColor(Constants.WHITE);
+            teamBattleButton.SetWidth(500);
+            teamBattleButton.SetHeight(50);
+            teamBattleButton.SetFontSize(50);
             //Add actor(s) to the cast for the HOME scene
             homeCast.AddActor("background", homeBackground);
             homeCast.AddActor("info", homeTitle);
             homeCast.AddActor("button", battleRoyaleButton);
             homeCast.AddActor("button", settingsButton);
             homeCast.AddActor("button", shoplifterButton);
+            homeCast.AddActor("button", teamBattleButton);
             //Create the script for the HOME scene
             Script homeScript = new Script();
             //Add INPUT action(s) to the script for the HOME scene
                 homeScript.AddAction("input", new ClickButtonsAction(mouseService, audioService));
             //Add UPDATE action(s) to the script for the HOME scene
-                homeScript.AddAction("update", new SettingsButtonAction());
-                homeScript.AddAction("update", new BattleRoyaleButtonAction());
-                homeScript.AddAction("update", new ShoplifterButtonAction());
+            homeScript.AddAction("update", new SettingsButtonAction());
+            homeScript.AddAction("update", new BattleRoyaleButtonAction());
+            homeScript.AddAction("update", new ShoplifterButtonAction());
+            homeScript.AddAction("update", new TeamBattleButtonAction());
             //Add OUTPUT action(s) to the script for the HOME scene
             homeScript.AddAction("output", new DrawActorsAction(videoService));
             //Add the cast and script to the HOME scene
@@ -101,7 +115,7 @@ namespace black_friday{
             Cast settingsCast = new Cast();
             //Create the settingsTitle actor
             Actor settingsTitle = new Actor();
-            settingsTitle.SetColor(Constants.BANNER_WHITE);
+            settingsTitle.SetColor(Constants.BANNER_GREY);
             Point settingsTitleStartingPoint = new Point(Constants.MAX_X / 2 - 250, 0 + 5);
             settingsTitle.SetPosition(settingsTitleStartingPoint);
             settingsTitle.SetText("Settings");
@@ -160,6 +174,7 @@ namespace black_friday{
             shopperSpeedButton.SetHeight(50);
             shopperSpeedButton.SetFontSize(50);
             //Add actor(s) to the cast for the SETTINGS scene
+            settingsCast.AddActor("background", homeBackground);
             settingsCast.AddActor("info", settingsTitle);
             settingsCast.AddActor("button", homeButton);
             settingsCast.AddActor("button", npcCountButton);
@@ -190,7 +205,7 @@ namespace black_friday{
             Cast rulesCast = new Cast();
             //Create the _rulesTitle_ actor
             Actor rulesTitle = new Actor();
-            settingsTitle.SetColor(Constants.BANNER_WHITE);
+            settingsTitle.SetColor(Constants.BANNER_GREY);
             Point rulesTitleStartingPoint = new Point(Constants.MAX_X / 2 - 250, 0 + 5);
             rulesTitle.SetPosition(rulesTitleStartingPoint);
             rulesTitle.SetText("Rules");
@@ -200,18 +215,18 @@ namespace black_friday{
             rulesTitle.SetFontSize(50);
             //Create the _rulesInfo_ actor
             Actor rulesInfo = new Actor();
-            settingsTitle.SetColor(Constants.BANNER_WHITE);
-            Point rulesInfoStartingPoint = new Point(Constants.MAX_X / 2 - 400, 0 + 105);
+            settingsTitle.SetColor(Constants.BANNER_GREY);
+            Point rulesInfoStartingPoint = new Point(Constants.MAX_X / 2 - 530, 0 + 105);
             rulesInfo.SetPosition(rulesInfoStartingPoint);
             rulesInfo.SetText("Rules Info");
             rulesInfo.SetTextColor(Constants.WHITE);
-            rulesInfo.SetWidth(800);
-            rulesInfo.SetHeight(300);
+            rulesInfo.SetWidth(1060);
+            rulesInfo.SetHeight(662);
             rulesInfo.SetFontSize(35);
             //Create the _playerSelectButton_ actor
             Button playerSelectButton = new Button();
            playerSelectButton.SetColor(Constants.BANNER_GREEN);
-            Point playerSelectButtonStartingPoint = new Point(Constants.MAX_X / 2 - 400, 0 + 430);
+            Point playerSelectButtonStartingPoint = new Point(Constants.MAX_X / 2 - 600, 0 + 800);
             playerSelectButton.SetPosition(playerSelectButtonStartingPoint);
             playerSelectButton.SetText("To Player Select");
             playerSelectButton.SetTextColor(Constants.WHITE);
@@ -221,7 +236,7 @@ namespace black_friday{
             //Create the _homeButton_ actor
             Button ruleshomeButton = new Button();
             ruleshomeButton.SetColor(Constants.BANNER_RED);
-            Point ruleshomeButtonStartingPoint = new Point(Constants.MAX_X / 2 - 400, 0 + 505);
+            Point ruleshomeButtonStartingPoint = new Point(Constants.MAX_X / 2, 0 + 800);
             ruleshomeButton.SetPosition(ruleshomeButtonStartingPoint);
             ruleshomeButton.SetText("Home");
             ruleshomeButton.SetTextColor(Constants.WHITE);
@@ -229,6 +244,7 @@ namespace black_friday{
             ruleshomeButton.SetHeight(50);
             ruleshomeButton.SetFontSize(50);
             //Add actor(s) to the cast for the RULES scene
+            rulesCast.AddActor("background", homeBackground);
             rulesCast.AddActor("info", rulesTitle);
             rulesCast.AddActor("info", rulesInfo);
             rulesCast.AddActor("button", playerSelectButton);
@@ -256,7 +272,7 @@ namespace black_friday{
             Cast playerSelectCast = new Cast();
             //Create the _playerSelectTitle_ actor
             Actor playerSelectTitle = new Actor();
-            playerSelectTitle.SetColor(Constants.BANNER_WHITE);
+            playerSelectTitle.SetColor(Constants.BANNER_GREY);
             Point playerSelectTitleStartingPoint = new Point(Constants.MAX_X / 2 - 250, 0 + 5);
             playerSelectTitle.SetPosition(playerSelectTitleStartingPoint);
             playerSelectTitle.SetText("Player Select");
@@ -266,7 +282,7 @@ namespace black_friday{
             playerSelectTitle.SetFontSize(50);
             //Create the playerSelectInfo actor
             Actor playerSelectInfo = new Actor();
-            playerSelectInfo.SetColor(Constants.BANNER_WHITE);
+            playerSelectInfo.SetColor(Constants.BANNER_GREY);
             Point playerSelectInfoStartingPoint = new Point(Constants.MAX_X / 2 - 530, 0 + 105);
             playerSelectInfo.SetPosition(playerSelectInfoStartingPoint);
             playerSelectInfo.SetText("Player Select Info");
@@ -308,6 +324,7 @@ namespace black_friday{
             playerSelectHomeButton.SetFontSize(50);
             
             //Add actor(s) to the cast for the PLAYER SELECT scene
+            playerSelectCast.AddActor("background", homeBackground);
             playerSelectCast.AddActor("info", playerSelectTitle);
             playerSelectCast.AddActor("info", playerSelectInfo);
             playerSelectCast.AddActor("button", playerNumberButton);
@@ -415,13 +432,52 @@ namespace black_friday{
 
 
 
+            //CREATE THE teamBattle SCENE
+            Scene teamBattleScene = new Scene();
+            teamBattleScene.SetIsGameScene(true);
+            //Create the script for the teamBattle scene
+            Script teamBattleScript = new Script();
+            //Add START action(s) to the script for the teamBattle scene (will only execute once (before the scene's loop starts))
+            teamBattleScript.AddAction("start", new InstantiateGameActorsAction());
+            teamBattleScript.AddAction("start", new InstantiateTeamBattleActorsAction());
+            //Add INPUT action(s) to the script for the teamBattle scene
+            teamBattleScript.AddAction("input", new ControlPlayer1Action());
+            teamBattleScript.AddAction("input", new ControlPlayer2Action());
+            teamBattleScript.AddAction("input", new ControlPlayer3Action());
+            teamBattleScript.AddAction("input", new ControlPlayer4Action());
+            teamBattleScript.AddAction("input", new ControlPlayer5Action());
+            teamBattleScript.AddAction("input", new ControlPlayer6Action());
+            teamBattleScript.AddAction("input", new ControlPlayer7Action());
+            teamBattleScript.AddAction("input", new ControlPlayer8Action());
+            teamBattleScript.AddAction("input", new ControlPlayer9Action());
+            teamBattleScript.AddAction("input", new ControlPlayer10Action());
+            teamBattleScript.AddAction("input", new ControlPlayer11Action());
+            teamBattleScript.AddAction("input", new ControlPlayer12Action());
+            teamBattleScript.AddAction("input", new ControlPlayer13Action());
+            teamBattleScript.AddAction("input", new ControlPlayer14Action());
+            teamBattleScript.AddAction("input", new ControlPlayer15Action());
+            //Add UPDATE action(s) to the script for the teamBattle scene
+            teamBattleScript.AddAction("update", new ManageTimerAction());
+            teamBattleScript.AddAction("update", new DirectZombieShoppersAction());
+            teamBattleScript.AddAction("update", new MoveActorsAction());
+            teamBattleScript.AddAction("update", new HandlePunchCollisionAction());
+            teamBattleScript.AddAction("update", new ReviveZombiesAction());
+            teamBattleScript.AddAction("update", new RevivePlayersAction());
+            teamBattleScript.AddAction("update", new ManageTeamScoreBannersAction());
+            //Add OUTPUT action(s) to the script for the teamBattle scene
+            teamBattleScript.AddAction("output", new DrawActorsAction(videoService));
+            //Add the script to the teamBattle scene
+            teamBattleScene.SetScript(teamBattleScript);
+
+
+
             //CREATE THE GAME OVER SCENE
             Scene gameOverScene = new Scene();
             //Create the cast for the GAME OVER scene
             Cast gameOverCast = new Cast();
             //Create the _gameOverTitle_ actor
             Actor gameOverTitle = new Actor();
-            gameOverTitle.SetColor(Constants.BANNER_WHITE);
+            gameOverTitle.SetColor(Constants.BANNER_GREY);
             Point gameOverTitleStartingPoint = new Point(Constants.MAX_X / 2 - 250, 0 + 5);
             gameOverTitle.SetPosition(gameOverTitleStartingPoint);
             gameOverTitle.SetText("Game Over");
@@ -431,7 +487,7 @@ namespace black_friday{
             gameOverTitle.SetFontSize(50);
             //Create the _gameOverInfo_ actor
             Actor gameOverInfo = new Actor();
-            gameOverInfo.SetColor(Constants.BANNER_WHITE);
+            gameOverInfo.SetColor(Constants.BANNER_GREY);
             Point gameOverInfoStartingPoint = new Point(Constants.MAX_X / 2 - 350, 0 + 105);
             gameOverInfo.SetPosition(gameOverInfoStartingPoint);
             gameOverInfo.SetText("");
@@ -460,6 +516,7 @@ namespace black_friday{
             gameOverHomeButton.SetHeight(50);
             gameOverHomeButton.SetFontSize(50);
             //Add actor(s) to the cast for the GAME OVER scene
+            gameOverCast.AddActor("background", homeBackground);
             gameOverCast.AddActor("info", gameOverTitle);
             gameOverCast.AddActor("info", gameOverInfo);
             gameOverCast.AddActor("button", gameOverHomeButton);
@@ -506,6 +563,8 @@ namespace black_friday{
                     return gameOverScene;
                 case "shoplifter":
                     return shoplifterScene;
+                case "teambattle":
+                    return teamBattleScene;
                 default:
                     return homeScene;
             }

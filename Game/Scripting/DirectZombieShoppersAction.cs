@@ -23,7 +23,7 @@ namespace black_friday.Game.Scripting{
                             Point velocity = new Point(random.Next(-1, 2), random.Next(-1, 2)).Scale(Constants.SHOPPER_SPEED); //a random cardinal direction (holding still is included) and scale it to Constants.SHOPPER_SPEED
                             zombie.SetVelocity(velocity);
                             zombie.SetDirection(velocity);
-                            zombie.SetDuration(random.Next(50, 500));
+                            zombie.SetDuration(random.Next(25, 250));
                             zombie.ResetFrameTick();
                         }
                     }

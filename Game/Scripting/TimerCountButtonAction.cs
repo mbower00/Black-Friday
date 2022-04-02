@@ -14,13 +14,13 @@ namespace black_friday.Game.Scripting{
 
 
         public TimerCountButtonAction(){
+            timerCounts.Add(60);
             timerCounts.Add(100);
             timerCounts.Add(150);
             timerCounts.Add(200);
             timerCounts.Add(250);
             timerCounts.Add(10);
             timerCounts.Add(25);
-            timerCounts.Add(50);
         }
 
         public void Execute(Scene scene){

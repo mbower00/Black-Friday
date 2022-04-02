@@ -47,7 +47,7 @@ namespace black_friday.Game.Scripting{
                 }
             }
 
-            handlePunchCollisionAction.KillPlayers(playersToKill);
+            handlePunchCollisionAction.KillPlayers(playersToKill, scene);
             handlePunchCollisionAction.KillZombies(zombiesToKill);
         }
     }

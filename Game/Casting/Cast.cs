@@ -17,6 +17,13 @@ namespace black_friday.Game.Casting{
         /// </summary>
         public Cast(){}
 
+        public bool ContainsActorKey(string key){
+            if (actors.ContainsKey(key)){
+                return true;
+            }
+            return false;
+        }
+
         /// <summary>
         /// Adds the given actor to the given group.
         /// </summary>

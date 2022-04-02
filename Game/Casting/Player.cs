@@ -6,6 +6,7 @@ namespace black_friday.Game.Casting{
         Random random = new Random();
         private bool isPunching;
         private int frameTick = Constants.PUNCH_COOLDOWN_DURATION + Constants.PUNCH_DURATION + 1;
+        private int lifeTick = 1;
         
         public Player(){
             this.SetText(Constants.SHOPPER_FACE);
@@ -58,6 +59,25 @@ namespace black_friday.Game.Casting{
         /// </summary>
         public void ResetFrameTick(){
             this.frameTick = 0;
+        }
+
+        public bool IsPlayerIDOdd(){
+            if (playerID % 2 != 0){
+                return true;
+            }
+            return false;
+        }
+
+        public int GetLifeTick(){
+            return this.lifeTick;
+        }
+
+        public void IncrementLifeTick(int increment = 1){
+            this.lifeTick += increment;
+        }
+        
+        public void ResetLifeTick(){
+            this.lifeTick = 0;
         }
 
         public void SetScore (int score){this.score = score;}

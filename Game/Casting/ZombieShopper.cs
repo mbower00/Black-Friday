@@ -4,6 +4,8 @@ namespace black_friday.Game.Casting{
         private int duration;
         private int frameTick;
 
+        private int teamID = 0;
+
         private Point direction = new Point(0, 0);
         Random random = new Random();
 
@@ -47,6 +49,9 @@ namespace black_friday.Game.Casting{
         public int GetDuration (){return duration;}
         public void SetDirection (Point direction){this.direction = direction;}
         public Point GetDirection (){return direction;}
+        public void SetTeamID (int teamID){this.teamID = teamID;}
+        public int GetTeamID (){return teamID;}
+
     }
 
 }

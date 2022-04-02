@@ -16,7 +16,7 @@ namespace black_friday.Game.Scripting{
             foreach(Actor actor in infoActors){
                 if (actor.GetPosition().Equals(new Point(0 + 25, 0 + 20))){
                     actor.SetText($"AMMO: {mallCop.GetAmmo()}");
-                    actor.SetTextColor(new Color(GetColorNumber(mallCop), 255, GetColorNumber(mallCop), 175));
+                    actor.SetTextColor(new Color(GetColorNumber(mallCop), GetPrimeColorNumber(mallCop), GetColorNumber(mallCop), 175));
                 }
             }
         }
@@ -29,34 +29,71 @@ namespace black_friday.Game.Scripting{
                 return 0;
             }
             if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .9){
-                return 26;
+                return 20;
             }
             if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .8){
-                return 51;
+                return 32;
             }
             if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .7){
-                return 77;
+                return 44;
             }
             if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .6){
-                return 102;
+                return 56;
             }
             if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .5){
-                return 128;
+                return 68;
             }
             if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .4){
-                return 153;
+                return 80;
             }
             if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .3){
-                return 179;
+                return 92;
             }
             if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .2){
-                return 204;
+                return 104;
             }
             if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .1){
-                return 230;
+                return 116;
             }
             else{
+                return 128;
+            }
+        }
+
+        private int GetPrimeColorNumber(MallCop mallCop){
+            int frameTick = mallCop.GetFrameTick();
+            if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= 1){
                 return 255;
+            }
+            if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .9){
+                return 243;
+            }
+            if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .8){
+                return 230;
+            }
+            if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .7){
+                return 217;
+            }
+            if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .6){
+                return 204;
+            }
+            if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .5){
+                return 192;
+            }
+            if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .4){
+                return 179;
+            }
+            if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .3){
+                return 166;
+            }
+            if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .2){
+                return 153;
+            }
+            if ((double) frameTick / Constants.GET_COP_RELOAD_TIME() >= .1){
+                return 140;
+            }
+            else{
+                return 128;
             }
         }
     }

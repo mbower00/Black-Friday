@@ -30,7 +30,23 @@ namespace black_friday.Game.Scripting{
                 undeadZombie.SetIsAlive(true);
                 undeadZombie.ResetFrameTick();
                 undeadZombie.SetText(Constants.SHOPPER_FACE);
-                undeadZombie.SetColor(new Color(random.Next(30, 230), random.Next(30, 230), random.Next(30, 230)));
+                switch(undeadZombie.GetTeamID()){
+                    case 1:
+                        undeadZombie.SetColor(Constants.LIGHT_RED);
+                        undeadZombie.SetTextColor(Constants.WHITE);
+
+                        break;
+                    case 2:
+                        undeadZombie.SetColor(Constants.LIGHT_BLUE);
+                        undeadZombie.SetTextColor(Constants.WHITE);
+
+                        break;
+                    default:
+                        undeadZombie.SetColor(new Color(random.Next(30, 230), random.Next(30, 230), random.Next(30, 230)));
+                        undeadZombie.SetTextColor(Constants.WHITE);
+
+                        break;
+                }
             }
         }
     }

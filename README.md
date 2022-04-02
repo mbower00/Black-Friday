@@ -1,24 +1,11 @@
 # black_friday
 Realistic black friday simulator
 
+To RUN:
+in terminal:
+    dotnet build
+    dotnet run
 
-build scenes in program
-    by:
-        makeing instances of actor
-        loading scripts
-
-
-player
-
-zombie
-
-timer
-
-steer actor
-
-draw actors
-
-button + mouse
 
 -- to add new player
 ADD KEYBINDINGS IN KEYBOARD

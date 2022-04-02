@@ -21,6 +21,9 @@ namespace black_friday.Game.Scripting{
                             case "shoplifter":
                                 scene.GetNextSceneInfo().SetNextSceneName("shoplifter");
                                 break;
+                            case "teambattle":
+                                scene.GetNextSceneInfo().SetNextSceneName("teambattle");
+                                break;
                             default:
                                 Console.WriteLine("default case in PlayButtonAction");
                                 scene.GetNextSceneInfo().SetNextSceneName("battleroyale");

@@ -24,6 +24,9 @@ namespace black_friday.Game.Scripting{
                     
                     if(player.GetIsPunching() && player.GetIsAlive() && jplayer.GetIsAlive() && jplayer.GetPlayerID() != player.GetPlayerID() && isCollision(player, jplayer)){ // player is punching, living, and colliding with a living jplayer
                         playersToKill.Add(jplayer);
+                        if(scene.GetNextSceneInfo().GetGameMode() == "teambattle"){
+                            player.IncrementScore();
+                        }
                     }
                 }
 
@@ -36,13 +39,13 @@ namespace black_friday.Game.Scripting{
             }
             
             
-            KillPlayers(playersToKill);
+            KillPlayers(playersToKill, scene);
 
             KillZombies(zombiesToKill);
         }
 
 
-        public void KillPlayers(List<Player> playersToKill){
+        public void KillPlayers(List<Player> playersToKill, Scene scene){
             foreach (Player deadPlayer in playersToKill){
                 deadPlayer.SetIsAlive(false);
                 deadPlayer.SetIsPunching(false);
@@ -50,7 +53,10 @@ namespace black_friday.Game.Scripting{
                 deadPlayer.SetTextColor(Constants.BANNER_RED);
                 deadPlayer.SetText(Constants.DEAD_SHOPPER_FACE);
                 deadPlayer.SetVelocity(new Point(0, 0));
-                deadPlayer.SetScore(0);
+                if(scene.GetNextSceneInfo().GetGameMode() != "teambattle"){
+                    deadPlayer.SetScore(0);
+                }
+                deadPlayer.ResetLifeTick();
             }
         }
 
@@ -58,6 +64,7 @@ namespace black_friday.Game.Scripting{
             foreach (ZombieShopper deadZombie in zombiesToKill){
                 deadZombie.SetIsAlive(false);
                 deadZombie.SetColor(Constants.CLEAR);
+                deadZombie.SetTextColor(Constants.GREY);
                 deadZombie.SetText(Constants.DEAD_SHOPPER_FACE);
                 deadZombie.SetVelocity(new Point(0, 0));
                 deadZombie.ResetFrameTick();

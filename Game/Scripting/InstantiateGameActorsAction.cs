@@ -27,13 +27,24 @@ namespace black_friday.Game.Scripting{
             Point timerStartingPoint = new Point(Constants.MAX_X / 2 - 50, 0 + (Constants.MAX_Y - 100));
             timer.SetPosition(timerStartingPoint);
             timer.SetText("");
-            timer.SetTextColor(Constants.BANNER_WHITE);
+            timer.SetTextColor(Constants.BANNER_GREY);
             timer.SetWidth(100);
             timer.SetHeight(50);
             timer.SetFontSize(50);
             //Add timer to cast
             cast.AddActor("info", timer);
 
+
+            //create the floor background
+            Actor floorBackground = new Actor();
+            floorBackground.SetWidth(1350);
+            floorBackground.SetHeight(900);
+            floorBackground.SetPath("Game/Props/Pics/Default.png");
+            floorBackground.SetFontSize(50);
+            floorBackground.SetPosition(new Point (0,0));
+            cast.AddActor("background", floorBackground);
+            
+            
             scene.SetCast(cast);
         }
     }

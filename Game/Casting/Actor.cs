@@ -10,7 +10,7 @@ namespace black_friday.Game.Casting{
     {
         private string text = "";
         private int fontSize = 15;
-        private Color color = Constants.BANNER_WHITE;
+        private Color color = Constants.BANNER_GREY;
         private Color textColor = Constants.WHITE;
         private Point position = new Point(0, 0);
         private Point velocity = new Point(0, 0);

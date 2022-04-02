@@ -18,7 +18,7 @@ namespace black_friday.Game.Scripting{
                     scoreBanners[i].SetTextColor(Constants.BANNER_BLUE);
                 }
                 else{
-                    scoreBanners[i].SetTextColor(Constants.BANNER_WHITE);
+                    scoreBanners[i].SetTextColor(Constants.BANNER_GREY);
                 }
             }
         }

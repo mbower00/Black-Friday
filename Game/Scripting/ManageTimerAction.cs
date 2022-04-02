@@ -13,7 +13,7 @@ namespace black_friday.Game.Scripting{
             Game.Casting.Timer timer = (Game.Casting.Timer) firstActor;
             List<Actor> players = scene.GetCast().GetActors("player");
 
-
+            
             timer.SetText($"{Constants.TIMER_COUNT - timer.GetSecondTick()}");
 
             //manage if time runs out
@@ -45,35 +45,47 @@ namespace black_friday.Game.Scripting{
         public string GetWinnerString(List<Player> winningPlayers){
             switch (winningPlayers.Count()){
                 case 1:
-                    return $"Player {winningPlayers[0].GetPlayerID()}";
+                    return $"Player {winningPlayers[0].GetPlayerID()} ({winningPlayers[0].GetScore()}pts)";
                 case 2:
-                    return $"Player {winningPlayers[0].GetPlayerID()} & {winningPlayers[1].GetPlayerID()}";
+                    return $"Player {winningPlayers[0].GetPlayerID()} ({winningPlayers[0].GetScore()}pts) & {winningPlayers[1].GetPlayerID()}";
                 case 3:
-                    return $"Player {winningPlayers[0].GetPlayerID()} & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()}";
+                    return $"Player {winningPlayers[0].GetPlayerID()} ({winningPlayers[0].GetScore()}pts) & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()}";
                 case 4:
-                    return $"Player {winningPlayers[0].GetPlayerID()} & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()} & {winningPlayers[3].GetPlayerID()}";
+                    Console.WriteLine($"Player {winningPlayers[0].GetPlayerID()} ({winningPlayers[0].GetScore()}pts) & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()} & {winningPlayers[3].GetPlayerID()}");
+                    return("[see terminal]");
                 case 5:
-                    return $"Player {winningPlayers[0].GetPlayerID()} & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()} & {winningPlayers[3].GetPlayerID()} & {winningPlayers[4].GetPlayerID()}";
+                    Console.WriteLine($"Player {winningPlayers[0].GetPlayerID()} ({winningPlayers[0].GetScore()}pts) & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()} & {winningPlayers[3].GetPlayerID()} & {winningPlayers[4].GetPlayerID()}");
+                    return("[see terminal]");
                 case 6:
-                    return $"Player {winningPlayers[0].GetPlayerID()} & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()} & {winningPlayers[3].GetPlayerID()} & {winningPlayers[4].GetPlayerID()} & {winningPlayers[5].GetPlayerID()}";
+                    Console.WriteLine($"Player {winningPlayers[0].GetPlayerID()} ({winningPlayers[0].GetScore()}pts) & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()} & {winningPlayers[3].GetPlayerID()} & {winningPlayers[4].GetPlayerID()} & {winningPlayers[5].GetPlayerID()}");
+                    return("[see terminal]");
                 case 7:
-                    return $"Player {winningPlayers[0].GetPlayerID()} & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()} & {winningPlayers[3].GetPlayerID()} & {winningPlayers[4].GetPlayerID()} & {winningPlayers[5].GetPlayerID()} & {winningPlayers[6].GetPlayerID()}";
+                    Console.WriteLine($"Player {winningPlayers[0].GetPlayerID()} ({winningPlayers[0].GetScore()}pts) & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()} & {winningPlayers[3].GetPlayerID()} & {winningPlayers[4].GetPlayerID()} & {winningPlayers[5].GetPlayerID()} & {winningPlayers[6].GetPlayerID()}");
+                    return("[see terminal]");
                 case 8:
-                    return $"Player {winningPlayers[0].GetPlayerID()} & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()} & {winningPlayers[3].GetPlayerID()} & {winningPlayers[4].GetPlayerID()} & {winningPlayers[5].GetPlayerID()} & {winningPlayers[6].GetPlayerID()} & {winningPlayers[7].GetPlayerID()}";
+                    Console.WriteLine($"Player {winningPlayers[0].GetPlayerID()} ({winningPlayers[0].GetScore()}pts) & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()} & {winningPlayers[3].GetPlayerID()} & {winningPlayers[4].GetPlayerID()} & {winningPlayers[5].GetPlayerID()} & {winningPlayers[6].GetPlayerID()} & {winningPlayers[7].GetPlayerID()}");
+                    return("[see terminal]");
                 case 9:
-                    return $"Player {winningPlayers[0].GetPlayerID()} & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()} & {winningPlayers[3].GetPlayerID()} & {winningPlayers[4].GetPlayerID()} & {winningPlayers[5].GetPlayerID()} & {winningPlayers[6].GetPlayerID()} & {winningPlayers[7].GetPlayerID()} & {winningPlayers[8].GetPlayerID()}";
+                    Console.WriteLine($"Player {winningPlayers[0].GetPlayerID()} ({winningPlayers[0].GetScore()}pts) & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()} & {winningPlayers[3].GetPlayerID()} & {winningPlayers[4].GetPlayerID()} & {winningPlayers[5].GetPlayerID()} & {winningPlayers[6].GetPlayerID()} & {winningPlayers[7].GetPlayerID()} & {winningPlayers[8].GetPlayerID()}");
+                    return("[see terminal]");
                 case 10:
-                    return $"Player {winningPlayers[0].GetPlayerID()} & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()} & {winningPlayers[3].GetPlayerID()} & {winningPlayers[4].GetPlayerID()} & {winningPlayers[5].GetPlayerID()} & {winningPlayers[6].GetPlayerID()} & {winningPlayers[7].GetPlayerID()} & {winningPlayers[8].GetPlayerID()} & {winningPlayers[9].GetPlayerID()}";
+                    Console.WriteLine($"Player {winningPlayers[0].GetPlayerID()} ({winningPlayers[0].GetScore()}pts) & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()} & {winningPlayers[3].GetPlayerID()} & {winningPlayers[4].GetPlayerID()} & {winningPlayers[5].GetPlayerID()} & {winningPlayers[6].GetPlayerID()} & {winningPlayers[7].GetPlayerID()} & {winningPlayers[8].GetPlayerID()} & {winningPlayers[9].GetPlayerID()}");
+                    return("[see terminal]");
                 case 11:
-                    return $"Player {winningPlayers[0].GetPlayerID()} & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()} & {winningPlayers[3].GetPlayerID()} & {winningPlayers[4].GetPlayerID()} & {winningPlayers[5].GetPlayerID()} & {winningPlayers[6].GetPlayerID()} & {winningPlayers[7].GetPlayerID()} & {winningPlayers[8].GetPlayerID()} & {winningPlayers[9].GetPlayerID()} & {winningPlayers[10].GetPlayerID()}";
+                    Console.WriteLine($"Player {winningPlayers[0].GetPlayerID()} ({winningPlayers[0].GetScore()}pts) & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()} & {winningPlayers[3].GetPlayerID()} & {winningPlayers[4].GetPlayerID()} & {winningPlayers[5].GetPlayerID()} & {winningPlayers[6].GetPlayerID()} & {winningPlayers[7].GetPlayerID()} & {winningPlayers[8].GetPlayerID()} & {winningPlayers[9].GetPlayerID()} & {winningPlayers[10].GetPlayerID()}");
+                    return("[see terminal]");
                 case 12:
-                    return $"Player {winningPlayers[0].GetPlayerID()} & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()} & {winningPlayers[3].GetPlayerID()} & {winningPlayers[4].GetPlayerID()} & {winningPlayers[5].GetPlayerID()} & {winningPlayers[6].GetPlayerID()} & {winningPlayers[7].GetPlayerID()} & {winningPlayers[8].GetPlayerID()} & {winningPlayers[9].GetPlayerID()} & {winningPlayers[10].GetPlayerID()} & {winningPlayers[11].GetPlayerID()}";
+                    Console.WriteLine($"Player {winningPlayers[0].GetPlayerID()} ({winningPlayers[0].GetScore()}pts) & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()} & {winningPlayers[3].GetPlayerID()} & {winningPlayers[4].GetPlayerID()} & {winningPlayers[5].GetPlayerID()} & {winningPlayers[6].GetPlayerID()} & {winningPlayers[7].GetPlayerID()} & {winningPlayers[8].GetPlayerID()} & {winningPlayers[9].GetPlayerID()} & {winningPlayers[10].GetPlayerID()} & {winningPlayers[11].GetPlayerID()}");
+                    return("[see terminal]");
                 case 13:
-                    return $"Player {winningPlayers[0].GetPlayerID()} & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()} & {winningPlayers[3].GetPlayerID()} & {winningPlayers[4].GetPlayerID()} & {winningPlayers[5].GetPlayerID()} & {winningPlayers[6].GetPlayerID()} & {winningPlayers[7].GetPlayerID()} & {winningPlayers[8].GetPlayerID()} & {winningPlayers[9].GetPlayerID()} & {winningPlayers[10].GetPlayerID()} & {winningPlayers[11].GetPlayerID()} & {winningPlayers[12].GetPlayerID()}";
+                    Console.WriteLine($"Player {winningPlayers[0].GetPlayerID()} ({winningPlayers[0].GetScore()}pts) & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()} & {winningPlayers[3].GetPlayerID()} & {winningPlayers[4].GetPlayerID()} & {winningPlayers[5].GetPlayerID()} & {winningPlayers[6].GetPlayerID()} & {winningPlayers[7].GetPlayerID()} & {winningPlayers[8].GetPlayerID()} & {winningPlayers[9].GetPlayerID()} & {winningPlayers[10].GetPlayerID()} & {winningPlayers[11].GetPlayerID()} & {winningPlayers[12].GetPlayerID()}");
+                    return("[see terminal]");
                 case 14:
-                    return $"Player {winningPlayers[0].GetPlayerID()} & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()} & {winningPlayers[3].GetPlayerID()} & {winningPlayers[4].GetPlayerID()} & {winningPlayers[5].GetPlayerID()} & {winningPlayers[6].GetPlayerID()} & {winningPlayers[7].GetPlayerID()} & {winningPlayers[8].GetPlayerID()} & {winningPlayers[9].GetPlayerID()} & {winningPlayers[10].GetPlayerID()} & {winningPlayers[11].GetPlayerID()} & {winningPlayers[12].GetPlayerID()} & {winningPlayers[13].GetPlayerID()}";
+                    Console.WriteLine($"Player {winningPlayers[0].GetPlayerID()} ({winningPlayers[0].GetScore()}pts) & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()} & {winningPlayers[3].GetPlayerID()} & {winningPlayers[4].GetPlayerID()} & {winningPlayers[5].GetPlayerID()} & {winningPlayers[6].GetPlayerID()} & {winningPlayers[7].GetPlayerID()} & {winningPlayers[8].GetPlayerID()} & {winningPlayers[9].GetPlayerID()} & {winningPlayers[10].GetPlayerID()} & {winningPlayers[11].GetPlayerID()} & {winningPlayers[12].GetPlayerID()} & {winningPlayers[13].GetPlayerID()}");
+                    return("[see terminal]");
                 case 15:
-                    return $"Player {winningPlayers[0].GetPlayerID()} & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()} & {winningPlayers[3].GetPlayerID()} & {winningPlayers[4].GetPlayerID()} & {winningPlayers[5].GetPlayerID()} & {winningPlayers[6].GetPlayerID()} & {winningPlayers[7].GetPlayerID()} & {winningPlayers[8].GetPlayerID()} & {winningPlayers[9].GetPlayerID()} & {winningPlayers[10].GetPlayerID()} & {winningPlayers[11].GetPlayerID()} & {winningPlayers[12].GetPlayerID()} & {winningPlayers[13].GetPlayerID()} & {winningPlayers[14].GetPlayerID()}";
+                    Console.WriteLine($"Player {winningPlayers[0].GetPlayerID()} ({winningPlayers[0].GetScore()}pts) & {winningPlayers[1].GetPlayerID()} & {winningPlayers[2].GetPlayerID()} & {winningPlayers[3].GetPlayerID()} & {winningPlayers[4].GetPlayerID()} & {winningPlayers[5].GetPlayerID()} & {winningPlayers[6].GetPlayerID()} & {winningPlayers[7].GetPlayerID()} & {winningPlayers[8].GetPlayerID()} & {winningPlayers[9].GetPlayerID()} & {winningPlayers[10].GetPlayerID()} & {winningPlayers[11].GetPlayerID()} & {winningPlayers[12].GetPlayerID()} & {winningPlayers[13].GetPlayerID()} & {winningPlayers[14].GetPlayerID()}");
+                    return("[see terminal]");
                 default:
                     return "error";
             }
@@ -81,7 +93,41 @@ namespace black_friday.Game.Scripting{
 
         public void HandleWinnerAccordingToScore(Scene scene){
             List<Actor> players = scene.GetCast().GetActors("player");
-            
+
+            if(scene.GetNextSceneInfo().GetGameMode() == "teambattle"){
+                int scoreOdd = 0;
+                int scoreEven = 0;
+                foreach(Actor i in players){
+                    Player player = (Player) i;
+                    if (player.IsPlayerIDOdd()){
+                        scoreOdd += player.GetScore();
+                    }
+                    else{
+                        scoreEven += player.GetScore();
+                    }
+                }
+                
+                
+                if(scoreOdd > scoreEven){
+                    scene.GetNextSceneInfo().SetNextSceneName("gameover");
+                    scene.GetNextSceneInfo().SetWinner($"Odd Team ({scoreOdd}pts)");
+                    scene.SetIsSceneOver(true);
+                    return;
+                }
+                else if(scoreEven > scoreOdd){
+                    scene.GetNextSceneInfo().SetNextSceneName("gameover");
+                    scene.SetIsSceneOver(true);
+                    scene.GetNextSceneInfo().SetWinner($"Even Team ({scoreEven}pts)");
+                    return;
+                }
+                else{
+                    scene.GetNextSceneInfo().SetNextSceneName("gameover");
+                    scene.GetNextSceneInfo().SetWinner("No Team");
+                    scene.SetIsSceneOver(true);
+                    return;
+                }
+            }
+
             List<Player> winningPlayers = new List<Player>();
             Player winningPlayer = new Player();
             winningPlayers.Add(winningPlayer);
