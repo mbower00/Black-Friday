@@ -4,8 +4,9 @@ using black_friday.Game.Casting;
 
 namespace black_friday.Game.Scripting{
     class SetRulesInfoAction : Action{
-        
-        public SetRulesInfoAction(){
+        AudioService audioService;
+        public SetRulesInfoAction(AudioService audioService){
+            this.audioService = audioService;
         }
 
         public void Execute(Scene scene){
@@ -15,7 +16,8 @@ namespace black_friday.Game.Scripting{
                     switch(scene.GetNextSceneInfo().GetGameMode()){
                         case "battleroyale":
                             actor.SetText("Carol down the street KNEW you were getting the new \nBarbie bike for your daughter! Find her and get rid of her,\nyou're a better mom than her after all\n\nMimc and eliminate others to be the last player left");
-                            scene.GetCast().AddActor("sound", new Sound(Constants.GET_BATTLE_ROYALE_SOUND()));
+                            //scene.GetCast().AddActor("sound", new Sound(Constants.GET_BATTLE_ROYALE_SOUND()));
+                            //audioService.PlaySound(new Sound(Constants.GET_BATTLE_ROYALE_SOUND()));
                             break;
                         case "shoplifter":
                             actor.SetText("Oh no... There's been word of shoplifters stealing toasters.\nFind them and take them out to restore honor to your\nBadge! You'll show those City Cops that Mall Cops are just\nas good!\n\nShoplifters: steal the most toasters while staying alive\n(Hint: you can eliminate others)\nMall Cop (uses mouse): eliminate shoplifters\n(Hint: hover over toasters to reveal if they have been \nstolen)");

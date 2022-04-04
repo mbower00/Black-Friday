@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using black_friday.Game.Casting;
 using black_friday.Game.Scripting;
+using black_friday.Game.Services;
 
 
 namespace black_friday.Game.Directing
@@ -13,12 +14,15 @@ namespace black_friday.Game.Directing
     /// </summary>
     public class Director
     {
+
+        VideoService videoService;
+
         /// <summary>
         /// Constructs a new instance of Director
         /// </summary>
-        public Director()
+        public Director(VideoService videoService)
         {
-            
+            this.videoService = videoService;
         }
 
         /// <summary>
@@ -28,17 +32,21 @@ namespace black_friday.Game.Directing
         /// <returns>the name of the scene to play next</returns>
         public NextSceneInfo PlayScene(Scene scene)
         {
-            if (scene.GetIsGameScene()){
-                ExecuteActions("start", scene);
+            while (videoService.IsWindowOpen()){
+                if (scene.GetIsGameScene()){
+                    ExecuteActions("start", scene);
+                }
+                while (!scene.GetIsSceneOver())
+                {
+                    ExecuteActions("input", scene);
+                    ExecuteActions("update", scene);
+                    ExecuteActions("output", scene);
+                    if(!videoService.IsWindowOpen()){videoService.CloseWindow();}
+                }
+                scene.SetIsSceneOver(false);
+                return scene.GetNextSceneInfo();
             }
-            while (!scene.GetIsSceneOver())
-            {
-                ExecuteActions("input", scene);
-                ExecuteActions("update", scene);
-                ExecuteActions("output", scene);
-            }
-            scene.SetIsSceneOver(false);
-            return scene.GetNextSceneInfo();
+            return new NextSceneInfo();
         }
 
         /// <summary>

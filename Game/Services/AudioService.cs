@@ -32,8 +32,9 @@ namespace black_friday.Game.Services
             List<string> filepaths = GetFilepaths(directory, filters);
             foreach (string filepath in filepaths)
             {
-                Raylib_cs.Sound sound = Raylib.LoadSound(filepath);
-                sounds[filepath] = sound;
+                string path = filepath.Replace("\\", "/");
+                Raylib_cs.Sound sound = Raylib.LoadSound(path);
+                sounds[path] = sound;
             }
         }
  

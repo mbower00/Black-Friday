@@ -31,8 +31,8 @@ namespace black_friday{
             Actor homeBackground = new Actor();
             homeBackground.SetWidth(1350);
             homeBackground.SetHeight(900);
-            homeBackground.SetPath("Game/Props/store_exterior.png"); //comment out for a non-pixel version
-                homeBackground.SetPath("Game/Props/store_exterior_pixel.png");
+            homeBackground.SetPath("Game/Props/store_exterior.png");
+                homeBackground.SetPath("Game/Props/store_exterior_pixel.png"); //comment out for a non-pixel version
             homeBackground.SetFontSize(50);
             homeBackground.SetPosition(new Point (0,0));
             //Create the home title actor
@@ -280,7 +280,7 @@ namespace black_friday{
             //Add UPDATE action(s) to the script for the RULES scene
             rulesScript.AddAction("update", new PlayerSelectButtonAction());
             rulesScript.AddAction("update", new HomeButtonAction());
-            rulesScript.AddAction("update", new SetRulesInfoAction());
+            rulesScript.AddAction("update", new SetRulesInfoAction(audioService));
             //Add OUTPUT action(s) to the script for the RULES scene
             rulesScript.AddAction("output", new DrawActorsAction(videoService));
             rulesScript.AddAction("output", new PlaySoundAction(audioService));            
@@ -565,7 +565,7 @@ namespace black_friday{
 
             //CREATE THE DIRECTING
             //Create the DIRECTOR
-            Director director = new Director();
+            Director director = new Director(videoService);
             //Create the NEXT SCENE INFO
             NextSceneInfo nextSceneInfo = new NextSceneInfo();
             //Set to start at the HOME SCENE
