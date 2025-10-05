@@ -1,5 +1,5 @@
 # black_friday
-Realistic black friday simulator
+Black Friday game based on Hidden in Plain Sight
 
 To RUN:
 in terminal:
